@@ -54,25 +54,25 @@ _At it's core, **Personal Projects** is simply there to help you keep track of a
 
 #### Wireframes
 
-![Home](https://github.com/texasrachel/Personal_Projects/blob/main/images/web1.png)
+![Home](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/web1.png)
 
 - Desktop Landing
 
-![Projects](https://github.com/texasrachel/Personal_Projects/blob/main/images/web2.pngg)
+![Projects](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/web2.pngg)
 
 - Projects Page
 
-![Mobile1](https://github.com/texasrachel/Personal_Projects/blob/main/images/mobile1.png)
+![Mobile1](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/mobile1.png)
 
 - Mobile Page
 
-![Tablet](https://github.com/texasrachel/Personal_Projects/blob/main/images/tablet1.png)
+![Tablet](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/tablet1.png)
 
 - Tablet Page
 
 #### Component Tree
 
-![schema2](https://github.com/texasrachel/Personal_Projects/blob/main/images/schema2.png)
+![schema2](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/schema2.png)
 
 #### Component Architecture
 
@@ -150,7 +150,7 @@ src
 
 #### ERD Model
 
-![schema3](https://github.com/texasrachel/Personal_Projects/blob/main/images/schema3.png)
+![schema3](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/schema3.png)
 
 ***
 
