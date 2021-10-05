@@ -72,7 +72,7 @@ _At it's core, **Personal Projects** is simply there to help you keep track of a
 
 #### Component Tree
 
-![schema2](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/schema2.png)
+![schema2](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/schema1.png)
 
 #### Component Architecture
 
