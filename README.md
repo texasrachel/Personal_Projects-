@@ -77,51 +77,90 @@ _At it's core, **Personal Projects** is simply there to help you keep track of a
 #### Component Architecture
 
 ``` structure
-
-
 src
 |__ App.js
 |__ App.css
 |__ index.js
 |__ index.css
 |__ assets/
-      |__ fonts
-      |__ images
-|__ layouts/
-      |__ Layout.jsx
-      |__ Layout.css
+    |__ fonts
+    |__ images
 |__ components/
-      |__ Nav.jsx
-      |__ Footer.js
-      |__ Main.js
-      |__ css/
+    |__ Nav
+    	  |__ Nav.jsx
         |__ Nav.css
+    |__ Layout
+        |__ Layout.jsx
+        |__ Layout.css
+    |__ Footer
+        |__ Footer.jsx
         |__ Footer.css
+    |__ Main
+        |__ Main.jsx
         |__ Main.css
-|__ services/
-      |__ api-config.js
-      |__ projects.js
-      |__ items.js
+    |__ Project
+        |__ Project.jsx
+        |__ Project.css
+    |__ ProjectCard
+        |__ ProjectCard.jsx
+        |__ ProjectCard.css
+    |__ Item
+        |__ Item.jsx
+        |__ Item.css
+    |__ ItemCard
+        |__ ItemCard.jsx
+        |__ ItemCard.css
+    |__ About
+        |__ About.jsx
+        |__ About.css
+    |__ SignIn
+        |__ SignIn.jsx
+        |__ SignIn.css
+    |__ SignUp
+        |__ SignUp.jsx
+        |__ SignUp.css
 |__ screens/
-      |__ Home.jsx
-      |__ Projects.jsx
-      |__ ProjectDetail.jsx
-      |__ ProjectEdit.jsx
-      |__ ProjectCreate.jsx
-			|__ Items.jsx
-      |__ ItemDetail.jsx
-      |__ ItemCreate.jsx
-      |__ ItemEdit.jsx
-      |__ css/
+    |__ Home.jsx
+	      |__ Home.jsx
         |__ Home.css
+    |__ SignIn
+        |__ SignIn.jsx
+        |__ SignIn.css
+    |__ SignUp
+        |__ SignUp.jsx
+        |__ SignUp.css
+    |__ Si
+        |__ SignUp.jsx
+        |__ SignUp.css
+    |__ Projects
+        |__ Projects.jsx
         |__ Projects.css
+    |__ ProjectDetail
+        |__ ProjectDetail.jsx
         |__ ProjectDetail.css
+    |__ ProjectEdit
+        |__ ProjectEdit.jsx
         |__ ProjectEdit.css
+    |__ ProjectCreate
+        |__ ProjectCreate.jsx
         |__ ProjectCreate.css
+	  |__ Items
+        |__ Items.jsx
         |__ Items.css
+    |__ ItemDetail
+        |__ ItemDetail.jsx
         |__ ItemDetail.css
+    |__ ItemCreate
+        |__ ItemCreate.jsx
         |__ ItemCreate.css
+    |__ ItemEdit
+        |__ ItemEdit.jsx
         |__ ItemEdit.css
+|__ services/
+    |__ api-config.js
+    |__ users.js
+    |__ projects.js
+    |__ items.js
 ```
 
 #### Time Estimates
