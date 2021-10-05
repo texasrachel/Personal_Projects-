@@ -150,7 +150,7 @@ src
 
 #### ERD Model
 
-![schema3](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/schema3.png)
+![schema3](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/Project%20Project.jpg)
 
 ***
 
