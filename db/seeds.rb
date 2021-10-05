@@ -6,3 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Project.destroy_all
+
+Project.create!(
+  [{
+  name: "",
+  img_url: "",
+  description: "",
+  category: "",
+  instructions_link: "",
+  for: "",
+  notes: ""
+}]
+)
+
+p "Created #{Project.count} projects"
