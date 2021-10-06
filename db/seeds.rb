@@ -10,7 +10,7 @@ Item.destroy_all
 Project.destroy_all
 User.destroy_all
 
-@admin = User.create!(username: 'Chickadee', first_name: 'SEI', email: 'chickadee@gmail.com', password: '111111')
+@admin = User.create!(username: 'chickadee', email: 'chickadee@gmail.com', password: '111111')
 
 p "Created #{User.count} users"
 
@@ -20,10 +20,11 @@ Project.create!(name: "Keyboard",  user: @admin, description: "Make a mechanical
 Project.create!(name: "Macarons",  user: @admin, description: "Make macarons", category: "Cooking")
 
 @projects = Project.all
+@projects_limit = Project.where(project_id: project)
 
 p "Created #{Project.count} projects"
 
-Item.create!(name: "Adirondack Chair", projects: @projects, description: "wooden outside chair", category: "furniture", bought: false)
+Item.create!(name: "Adirondack Chair", projects: @projects_limit, description: "wooden outside chair", category: "furniture", bought: false)
 Item.create!(name: "Firepit", projects: @projects, description: "fire pit", category: "furniture", bought: false)
 Item.create!(name: "Ground Rock", projects: @projects, description: "rock for around firepit", category: "gardening", bought: true)
 Item.create!(name: "Sunsail", projects: @projects, description: "sun shade fabric", category: "gardening", bought: false)
@@ -32,3 +33,4 @@ Item.create!(name: "Sunsail Buckle", projects: @projects, description: "sunsail 
 Item.create!(name: "Landscape Fabric", projects: @projects, description: "weed block", category: "gardening", bought: true)
 
 p "Created #{Item.count} items"
+

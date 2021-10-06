@@ -40,6 +40,16 @@ class ProjectsController < ApplicationController
     @project.destroy
   end
 
+  # add items to projects
+  def add_items_to_projects
+    @projects = Project.find(params[:id])
+    @items = Item.find(prarams[:item_id])
+
+    @project.items << @items
+
+    render json: @projects, include: :items
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
@@ -48,6 +58,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :img_url, :description, :category, :instructions_link, :for, :notes)
+      params.require(:project).permit(:name, :item_id, :user_id, :img_url, :description, :category, :instructions_link, :for, :notes)
     end
 end
