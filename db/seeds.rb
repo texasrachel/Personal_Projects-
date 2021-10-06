@@ -23,12 +23,12 @@ Project.create!(name: "Macarons",  user: @admin, description: "Make macarons", c
 
 p "Created #{Project.count} projects"
 
-Item.create!(name: "Adirondack Chair", projects: @projects)
-Item.create!(name: "Firepit", projects: @projects)
-Item.create!(name: "Ground Rock", projects: @projects)
-Item.create!(name: "Sunsail", projects: @projects)
-Item.create!(name: "Sunsail Hook", projects: @projects)
-Item.create!(name: "Sunsail Buckle", projects: @projects)
-Item.create!(name: "Landscape Fabric", projects: @projects)
+Item.create!(name: "Adirondack Chair", projects: @projects, description: "wooden outside chair", category: "furniture", bought: false)
+Item.create!(name: "Firepit", projects: @projects, description: "fire pit", category: "furniture", bought: false)
+Item.create!(name: "Ground Rock", projects: @projects, description: "rock for around firepit", category: "gardening", bought: true)
+Item.create!(name: "Sunsail", projects: @projects, description: "sun shade fabric", category: "gardening", bought: false)
+Item.create!(name: "Sunsail Hook", projects: @projects, description: "hook for house", category: "hardware", bought: false)
+Item.create!(name: "Sunsail Buckle", projects: @projects, description: "sunsail attachments", category: "hardware", bought: false)
+Item.create!(name: "Landscape Fabric", projects: @projects, description: "weed block", category: "gardening", bought: true)
 
-p "Created #{Items.count} items"
+p "Created #{Item.count} items"
