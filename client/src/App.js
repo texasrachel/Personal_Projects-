@@ -1,5 +1,5 @@
 import './App.css';
-import {  useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom';
 import { loginUser, registerUser, verifyUser, removeToken } from './services/auth'
 
@@ -7,6 +7,7 @@ import Layout from './components/Layout/Layout';
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import Home from './screens/Home/Home';
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -42,18 +43,19 @@ const App = () => {
     <div className="App">
       <h1>Project Shopping Planner</h1>
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
-      <Switch>
-        <Route path='/'>
-          <Home />
-        </Route>
-        <Route path='/login'>
-          <Login handleLogin={handleLogin} />
-        </Route>
-        <Route path='/register'>
-          <Register handleRegister={handleRegister} />
-        </Route>
-      </Switch>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/login'>
+            <Login handleLogin={handleLogin} />
+          </Route>
+          <Route path='/register'>
+            <Register handleRegister={handleRegister} />
+          </Route>
+        </Switch>
       </Layout>
+      <Footer />
     </div>
   );
 }

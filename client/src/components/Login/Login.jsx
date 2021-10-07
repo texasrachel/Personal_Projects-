@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function SignIn(props) {
+function Login(props) {
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -43,11 +43,11 @@ function SignIn(props) {
         />
       </label>
       <br />
-      <Link to='/signup'>SignUp</Link>
+      <Link to='/register'>Register</Link>
       <button>Submit</button>
     </form>
     </div>
   )
 }
 
-export default SignIn
+export default Login

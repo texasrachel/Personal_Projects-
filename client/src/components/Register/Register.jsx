@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function SignUp(props) {
+function Register(props) {
   
   const [formData, setFormData] = useState({
     username: '',
@@ -20,9 +20,9 @@ function SignUp(props) {
     <div>
     <form onSubmit={(e)=> {
       e.preventDefault();
-      props.handleSignIn(formData);
+      props.handleRegister(formData);
     }}>
-      <h3>SignUp</h3>
+      <h3>Register</h3>
       <label>
         Username:
         <input
@@ -49,4 +49,4 @@ function SignUp(props) {
   )
 }
 
-export default SignUp
+export default Register
