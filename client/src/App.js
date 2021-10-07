@@ -12,11 +12,11 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 // import SignUp from './screens/SignUp/SignUp'
 import { verifyUser } from './services/users'
 import Projects from './screens/Projects/Projects'
+import { signinUser, registerUser, verifyUser, removeToken } from './services/auth'
 
-function App() {
+const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
-
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -26,19 +26,19 @@ function App() {
     handleVerify();
   }, []);
 
-  const handleLogin = async (loginData) => {
-    const userData = await loginUser(loginData);
+  const handleSignIn = async (signinData) => {
+    const userData = await signinUser(signinData);
     setCurrentUser(userData);
     history.push('/');
   };
 
-  const handleRegister = async (registerData) => {
-    const userData = await registerUser(registerData);
+  const handleSignUp = async (signupData) => {
+    const userData = await signupUser(signupData);
     setCurrentUser(userData);
     history.push('/');
   };
 
-  const handleLogout = () => {
+  const handleSignOut = () => {
     setCurrentUser(null);
     localStorage.removeItem('authToken');
     removeToken();
@@ -47,49 +47,19 @@ function App() {
   return (
     <div className="App">
       <h1>Project Shopping Planner</h1>
+      <Layout currentUser={currentUser} handleLogout={handleSignOut}>
       <Switch>
-        <Route path='/'
-          // component={Main}
-        />
-        <Route path='/projects'>
-          <Projects projects={projects} />
+        <Route path='/'>
+          <Home />
         </Route>
-        <Route path='/projects/:id'>
-          <Project projects={projects} />
+        <Route path='/signin'>
+          <SignIn handleSignIn={handleSignIn} />
         </Route>
-        <Route path='/projects/:id/edit'>
-          <ProjectEdit projects={projects} />
-        </Route>
-        <Route path='/projects/new'>
-          <ProjectCreate handleProjectCreate={handleProjectCreate} />
+        <Route path='/register'>
+          <signin handleSignUp={handleSignUp} />
         </Route>
       </Switch>
-
-      <div>
-        <form>
-          <>
-            <label htmlFor='username'>Username:
-              <input
-                name='username'
-                value={formData.username}
-                onChange={handleChange}
-              />
-            </label>
-          </>
-          <>
-            <label htmlFor='password'>Password:
-              <input
-                name='password'
-                value={formData.password}
-                onChange={handleChange}
-              />
-            </label>
-          </>
-          <>
-            <button>Submit</button>
-          </>
-        </form>
-      </div>
+      </Layout>
     </div>
   );
 }

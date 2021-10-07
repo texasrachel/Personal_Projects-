@@ -2,14 +2,9 @@ import './App.css';
 import {  useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom';
 
-// import Home from './screens/Home/Home'
-// import ItemCreate from './screens/ItemCreate/ItemCreate'
-// import ItemDetail from './screens/ItemDetail/ItemDetail'
-// import ItemEdit from './screens/ItemEdit/ItemEdit'
-// import Items from './screens/Items/Items'
-// import SignIn from './screens/SignIn/SignIn'
-// import SignOut from './screens/SignOut/SignOut'
-// import SignUp from './screens/SignUp/SignUp'
+import { getAllProjects, postProject, deleteProject, putProject } from '../services/projects'
+import { getAllItems } from '../services/items'
+import Items from './screens/Items/Items'
 import Projects from './screens/Projects/Projects'
 import ProjectEdit from './screens/ProjectEdit/ProjectEdit'
 import ProjectCreate from './screens/ProjectCreate/ProjectCreate'
@@ -59,20 +54,20 @@ function Main() {
   };
 
   return (
-    <div className="App">
-      <h1>Project Shopping Planner</h1>
+    <div>
+      <h1>Main Area</h1>
       <Switch>
-        <Route path='/'
-          // component={Main}
-        />
+        <Route path='/items'>
+          <Items items={items} />
+        </Route>
         <Route path='/projects'>
-          <Projects projects={projects} />
+          <Projects projects={projects} handleProjectDelete={handleProjectDelete}/>
         </Route>
         <Route path='/projects/:id'>
-          <Projects projects={projects} />
+          <ProjectDetail items={items} />
         </Route>
         <Route path='/projects/:id/edit'>
-          <ProjectEdit projects={projects} />
+          <ProjectEdit projects={projects} handleProjectUpdate={handleProjectUpdate}/>
         </Route>
         <Route path='/projects/new'>
           <ProjectCreate handleProjectCreate={handleProjectCreate} />
