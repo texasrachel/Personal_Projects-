@@ -19,7 +19,7 @@
 
 ## Overview
 
-_At it's core, **Personal Projects** is simply there to help you keep track of all those things you want to do. No matter the stage you are at in planning, you need a way to make sure you have covered all the bases. And when you have multiple projects happening at once, it is almost impossible to not mess up on something. Which is why **Personal Projects** will be critical to your plans._
+_At it's core, **Project Shopping Planner** is simply there to help you keep track of all those things you want to do. No matter the stage you are at in planning, you need a way to make sure you have covered all the bases. And when you have multiple projects happening at once, it is almost impossible to not mess up on something. Which is why **Project Shopping Planner** will be critical to your plans._
 
 <br>
 
