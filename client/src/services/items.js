@@ -10,13 +10,13 @@ export const getItem = async id => {
   return resp.data;
 };
 
-export const createItem = async item => {
-  const resp = await api.post('/items', item);
+export const createItem = async (itemData) => {
+  const resp = await api.post('/items', {item: itemData });
   return resp.data;
 };
 
-export const updateItem = async (id, item) => {
-  const resp = await api.post(`/items/${id}`);
+export const updateItem = async (id, itemData) => {
+  const resp = await api.put(`/item/${id}`, { item: itemData });
   return resp.data;
 };
 
