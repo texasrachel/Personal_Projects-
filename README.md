@@ -58,7 +58,9 @@ _At it's core, **Personal Projects** is simply there to help you keep track of a
 
 - Desktop Landing
 
-![Projects](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/web2.png)
+![Projects](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/web3.png)
+
+![Projects](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/web4.png)
 
 - All Pages
 
