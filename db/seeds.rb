@@ -25,7 +25,7 @@ Project.create!(
 Project.create!(
   name: "Knit Gnome",  
   user: @admin,
-  escription: "Knit a gnome", 
+  description: "Knit a gnome", 
   category: "Knitting")
 Project.create!(
   name: "Keyboard",  
