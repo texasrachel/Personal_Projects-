@@ -1,18 +1,12 @@
 import './App.css';
 import {  useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom';
+import { signinUser, signupUser, verifyUser, removeToken } from './services/auth'
 
-// import Home from './screens/Home/Home'
-// import ItemCreate from './screens/ItemCreate/ItemCreate'
-// import ItemDetail from './screens/ItemDetail/ItemDetail'
-// import ItemEdit from './screens/ItemEdit/ItemEdit'
-// import Items from './screens/Items/Items'
-// import SignIn from './screens/SignIn/SignIn'
-// import SignOut from './screens/SignOut/SignOut'
-// import SignUp from './screens/SignUp/SignUp'
-import { verifyUser } from './services/users'
-import Projects from './screens/Projects/Projects'
-import { signinUser, registerUser, verifyUser, removeToken } from './services/auth'
+import Layout from './components/Layout/Layout';
+import SignIn from './components/SignIn/SignIn'
+import SignUp from './components/SignUp/SignUp'
+import Home from './screens/Home/Home';
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -55,8 +49,8 @@ const App = () => {
         <Route path='/signin'>
           <SignIn handleSignIn={handleSignIn} />
         </Route>
-        <Route path='/register'>
-          <signin handleSignUp={handleSignUp} />
+        <Route path='/signup'>
+          <SignUp handleSignUp={handleSignUp} />
         </Route>
       </Switch>
       </Layout>
