@@ -1,11 +1,11 @@
 import './App.css';
 import {  useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom';
-import { signinUser, signupUser, verifyUser, removeToken } from './services/auth'
+import { loginUser, registerUser, verifyUser, removeToken } from './services/auth'
 
 import Layout from './components/Layout/Layout';
-import SignIn from './components/SignIn/SignIn'
-import SignUp from './components/SignUp/SignUp'
+import Login from './components/Login/Login'
+import Register from './components/Register/Register'
 import Home from './screens/Home/Home';
 
 const App = () => {
@@ -20,19 +20,19 @@ const App = () => {
     handleVerify();
   }, []);
 
-  const handleSignIn = async (signinData) => {
-    const userData = await signinUser(signinData);
+  const handleLogin = async (loginData) => {
+    const userData = await loginUser(loginData);
     setCurrentUser(userData);
     history.push('/');
   };
 
-  const handleSignUp = async (signupData) => {
-    const userData = await signupUser(signupData);
+  const handleRegister = async (registerData) => {
+    const userData = await registerUser(registerData);
     setCurrentUser(userData);
     history.push('/');
   };
 
-  const handleSignOut = () => {
+  const handleLogout = () => {
     setCurrentUser(null);
     localStorage.removeItem('authToken');
     removeToken();
@@ -41,16 +41,16 @@ const App = () => {
   return (
     <div className="App">
       <h1>Project Shopping Planner</h1>
-      <Layout currentUser={currentUser} handleLogout={handleSignOut}>
+      <Layout currentUser={currentUser} handleLogout={handleLogout}>
       <Switch>
         <Route path='/'>
           <Home />
         </Route>
-        <Route path='/signin'>
-          <SignIn handleSignIn={handleSignIn} />
+        <Route path='/login'>
+          <Login handleLogin={handleLogin} />
         </Route>
-        <Route path='/signup'>
-          <SignUp handleSignUp={handleSignUp} />
+        <Route path='/register'>
+          <Register handleRegister={handleRegister} />
         </Route>
       </Switch>
       </Layout>

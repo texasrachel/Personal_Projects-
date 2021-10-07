@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function SignUp(props) {
+export default function Register(props) {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -19,10 +19,10 @@ function SignUp(props) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        props.handleSignUp(formData);
+        props.handleRegister(formData);
       }}
     >
-      <h3>SignUp</h3>
+      <h3>Register</h3>
       <label>
         Username:
         <input
@@ -57,5 +57,3 @@ function SignUp(props) {
     </form>
   );
 }
-
-export default SignUp

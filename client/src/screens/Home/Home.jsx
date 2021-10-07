@@ -1,13 +1,13 @@
 import React from 'react'
-import Layout from '../../components/Layout/Layout'
+// import Layout from '../../components/Layout/Layout'
 
 const Home = (props) => {
   return (
-    <Layout >
+    // <Layout >
       <div>
         <h1>Welcome to the Home Page</h1>
       </div>
-    </Layout>
+    // </Layout>
   )
 }
 
