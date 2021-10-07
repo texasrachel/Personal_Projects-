@@ -24,7 +24,7 @@ Project.create!(
   category: "Home")
 Project.create!(
   name: "Knit Gnome",  
-  user: @admin, d
+  user: @admin,
   escription: "Knit a gnome", 
   category: "Knitting")
 Project.create!(
