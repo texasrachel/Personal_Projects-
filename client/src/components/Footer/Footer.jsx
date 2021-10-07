@@ -1,10 +1,12 @@
-import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
-      
-    </div>
+    <footer>
+      <div> 
+        <a href='github'>Github</a>
+        <a href='linkedin'>LinkedIn</a>
+      </div>
+    </footer>
   )
 }
 
