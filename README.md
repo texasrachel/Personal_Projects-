@@ -60,7 +60,7 @@ _At it's core, **Personal Projects** is simply there to help you keep track of a
 
 ![Projects](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/web2.png)
 
-- Projects Page
+- All Pages
 
 ![Mobile1](https://github.com/texasrachel/Personal_Projects-/blob/main/public/images/mobile1.png)
 
@@ -86,15 +86,21 @@ src
     |__ fonts
     |__ images
 |__ components/
-    |__ Nav
-    	  |__ Nav.jsx
-        |__ Nav.css
-    |__ Layout
-        |__ Layout.jsx
-        |__ Layout.css
+ 		|__ About
+        |__ About.jsx
+        |__ About.css
     |__ Footer
         |__ Footer.jsx
         |__ Footer.css
+    |__ Item
+        |__ Item.jsx
+        |__ Item.css
+    |__ ItemCard
+        |__ ItemCard.jsx
+        |__ ItemCard.css
+    |__ Layout
+        |__ Layout.jsx
+        |__ Layout.css
     |__ Main
         |__ Main.jsx
         |__ Main.css
@@ -104,15 +110,6 @@ src
     |__ ProjectCard
         |__ ProjectCard.jsx
         |__ ProjectCard.css
-    |__ Item
-        |__ Item.jsx
-        |__ Item.css
-    |__ ItemCard
-        |__ ItemCard.jsx
-        |__ ItemCard.css
-    |__ About
-        |__ About.jsx
-        |__ About.css
     |__ SignIn
         |__ SignIn.jsx
         |__ SignIn.css
@@ -123,65 +120,64 @@ src
     |__ Home.jsx
 	      |__ Home.jsx
         |__ Home.css
-    |__ SignIn
-        |__ SignIn.jsx
-        |__ SignIn.css
-    |__ SignUp
-        |__ SignUp.jsx
-        |__ SignUp.css
-    |__ Si
-        |__ SignUp.jsx
-        |__ SignUp.css
-    |__ Projects
-        |__ Projects.jsx
-        |__ Projects.css
+    |__ ItemCreate
+        |__ ItemCreate.jsx
+        |__ ItemCreate.css
+		|__ ItemDetail
+        |__ ItemDetail.jsx
+        |__ ItemDetail.css
+    |__ ItemEdit
+        |__ ItemEdit.jsx
+        |__ ItemEdit.css
+ 	  |__ Items
+        |__ Items.jsx
+        |__ Items.css
+    |__ ProjectCreate
+        |__ ProjectCreate.jsx
+        |__ ProjectCreate.css
     |__ ProjectDetail
         |__ ProjectDetail.jsx
         |__ ProjectDetail.css
     |__ ProjectEdit
         |__ ProjectEdit.jsx
         |__ ProjectEdit.css
-    |__ ProjectCreate
-        |__ ProjectCreate.jsx
-        |__ ProjectCreate.css
-	  |__ Items
-        |__ Items.jsx
-        |__ Items.css
-    |__ ItemDetail
-        |__ ItemDetail.jsx
-        |__ ItemDetail.css
-    |__ ItemCreate
-        |__ ItemCreate.jsx
-        |__ ItemCreate.css
-    |__ ItemEdit
-        |__ ItemEdit.jsx
-        |__ ItemEdit.css
+		|__ Projects
+        |__ Projects.jsx
+        |__ Projects.css
+    |__ SignIn
+        |__ SignIn.jsx
+        |__ SignIn.css
+    |__ SignUp
+        |__ SignUp.jsx
+        |__ SignUp.css
 |__ services/
     |__ api-config.js
-    |__ users.js
-    |__ projects.js
+    |__ auth.js
     |__ items.js
+    |__ projects.js
+    |__ users.js
 ```
 
 #### Time Estimates
 
 | Task                        | Priority | Estimated Time | Time Invested | Actual Time |
 | --------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Setup Ruby                  |    H     |     3 hrs      |               |             |
-| Create models |    H     |     4 hrs     |               |             |
-| Migration | H | 2 hrs | | |
-| Ruby Testing | H | 2 hrs | | |
+| Setup Ruby                  |    H     |     3 hrs      | 2 hours |             |
+| Create Models |    H     |     4 hrs     | 4 hours |             |
+| Migration | H | 2 hrs | 2.5 hours | |
+| Ruby Testing | H | 2 hrs | 2 hours | |
 | Setup SQL | H | 1 hrs | ||
-| SQL data & seed | H | 3 hrs | ||
-| Ruby Routes | H | 2 hrs | ||
-| Setup React | H | 3 hrs | ||
+| SQL data & seed | H | 3 hrs | 1 hour ||
+| Ruby Routes | H | 2 hrs | 1 hour ||
+| Setup React | H | 3 hrs | 3.5 hours ||
 | React Routes | H | 2 hrs | ||
-| Create components | H | 3 hrs | ||
-| Create screens | H | 3 hrs | ||
+| Create Components | H | 3 hrs | 2 hours ||
+| Create Screens | H | 3 hrs | 2 hours ||
+| React Testing | H | 2 hrs |  ||
 | CSS | H | 6 hrs | ||
 | Testing | H | 4 hrs | ||
 | Clean-up | M | 2 hrs | ||
-| TOTAL                       |          |     40 hrs     |          |          |
+| TOTAL                       |          |     42 hrs     |          |          |
 
 <br>
 
