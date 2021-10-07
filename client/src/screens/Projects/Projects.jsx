@@ -1,8 +1,8 @@
-import React from 'react'
+import './Projects.css'
 
 function Projects(props) {
   return (
-    <div>
+    <div className='tempbox'>
       <h1>-Projects-</h1>
       {props.projects.map(project => (
         <p key={project.id}>{project.name}</p>

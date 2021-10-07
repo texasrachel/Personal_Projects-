@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOneProject, addItemsToProject } from '../services/projects';
+import './ProjectDetail.css'
 
 function ProjectDetail(props) {
   const [projectDetailItem, setProjectDetailItem] = useState(null);
@@ -29,7 +30,7 @@ function ProjectDetail(props) {
   };
 
   return (
-    <div>
+    <div className='tempbox'>
       <h3>{projectDetailItem?.name}</h3>
       {projectDetailItem?.items.map((item) => (
         <p key={item.id}>{item.name}</p>

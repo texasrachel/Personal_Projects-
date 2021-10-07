@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './ProjectCreate.css'
 
 function ProjectCreate(props) {
   const { name, value } = e.target
@@ -9,7 +10,7 @@ function ProjectCreate(props) {
 }
 
   return (
-    <div>
+    <div className='tempbox'>
       <form onSubmit={(e)=> {
       e.preventDefault()
       props.handleProjectCreate(formData);
