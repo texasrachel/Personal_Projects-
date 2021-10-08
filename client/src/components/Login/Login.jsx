@@ -1,12 +1,12 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-function SignUp(props) {
-  
+function Login(props) {
   const [formData, setFormData] = useState({
     username: '',
-    email: '',
-    password: '',
-  });
+    password: ''
+  })
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,11 +18,11 @@ function SignUp(props) {
 
   return (
     <div>
-    <form onSubmit={(e)=> {
+      <form onSubmit={(e)=> {
       e.preventDefault();
-      props.handleSignIn(formData);
+      props.handleLogin(formData);
     }}>
-      <h3>SignUp</h3>
+      <h3>Login</h3>
       <label>
         Username:
         <input
@@ -43,10 +43,11 @@ function SignUp(props) {
         />
       </label>
       <br />
+      <Link to='/register'>Register</Link>
       <button>Submit</button>
     </form>
     </div>
   )
 }
 
-export default SignUp
+export default Login

@@ -112,12 +112,12 @@ src
     |__ ProjectCard
         |__ ProjectCard.jsx
         |__ ProjectCard.css
-    |__ SignIn
-        |__ SignIn.jsx
-        |__ SignIn.css
-    |__ SignUp
-        |__ SignUp.jsx
-        |__ SignUp.css
+    |__ Login
+        |__ Login.jsx
+        |__ Login.css
+    |__ Register
+        |__ Register.jsx
+        |__ Register.css
 |__ screens/
     |__ Home.jsx
 	      |__ Home.jsx
@@ -146,12 +146,12 @@ src
 		|__ Projects
         |__ Projects.jsx
         |__ Projects.css
-    |__ SignIn
-        |__ SignIn.jsx
-        |__ SignIn.css
-    |__ SignUp
-        |__ SignUp.jsx
-        |__ SignUp.css
+    |__ Login
+        |__ Login.jsx
+        |__ Login.css
+    |__ Register
+        |__ Register.jsx
+        |__ Register.css
 |__ services/
     |__ api-config.js
     |__ auth.js

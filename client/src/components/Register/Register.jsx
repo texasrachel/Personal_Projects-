@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-function SignUp(props) {
+function Register(props) {
+  
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -16,29 +17,18 @@ function SignUp(props) {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        props.handleSignUp(formData);
-      }}
-    >
-      <h3>SignUp</h3>
+    <div>
+    <form onSubmit={(e)=> {
+      e.preventDefault();
+      props.handleRegister(formData);
+    }}>
+      <h3>Register</h3>
       <label>
         Username:
         <input
           type='text'
           name='username'
           value={formData.username}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input
-          type='text'
-          name='email'
-          value={formData.email}
           onChange={handleChange}
         />
       </label>
@@ -55,7 +45,8 @@ function SignUp(props) {
       <br />
       <button>Submit</button>
     </form>
-  );
+    </div>
+  )
 }
 
-export default SignUp
+export default Register

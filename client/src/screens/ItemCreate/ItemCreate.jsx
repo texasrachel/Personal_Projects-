@@ -1,15 +1,16 @@
 import { useState } from 'react'
+import './ItemCreate.css'
 
 function ItemCreate(props) {
   const { name, value } = e.target
   setFormData((prevState) => ({
-    ..prevState,
+    ...prevState,
     [name]: value
   }))
 }
 
   return (
-    <div>
+    <div className='tempbox'>
       <form onSubmit={(e)=> {
       e.preventDefault()
       props.handleItemCreate(formData);

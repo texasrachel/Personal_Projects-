@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getOneItem } from "../services/Items";
+import './ItemDetail.css'
 
 function ItemDetail(props) {
   const [ItemDetail, setItemDetail] = useState(null);
@@ -22,7 +23,7 @@ function ItemDetail(props) {
   };
 
   return (
-    <div>
+    <div className='tempbox'>
       <h3>{itemDetail?.name}</h3>
       {itemDetail?.items.map((item) => (
         <p key={item.id}>{item.name}</p>
