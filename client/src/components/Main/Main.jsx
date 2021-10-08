@@ -86,11 +86,6 @@ function Main() {
           <ProjectCreate handleProjectCreate={handleProjectCreate} />
         </Route>
       </Switch>
-
-      <div>
-        <h1>Main component</h1>
-            
-      </div>
     </div>
   );
 }

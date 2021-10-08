@@ -1,20 +1,23 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { getOneProject, addItemToProject } from '../../services/projects';
 import './ProjectDetail.css'
+import Layout from '../../components/Layout/Layout';
 
 function ProjectDetail(props) {
-  const [projectDetailItem, setProjectDetailItem] = useState(null);
+  const [project, setProject] = useState(null);
   const [selectedItem, setSelectedItem] = useState('');
   const { id } = useParams();
-  const { items } = props;
+  // const { items } = props;
+  const { allProjects, removeProject } = props
 
   useEffect(() => {
-    const getProjectDetailItem = async () => {
+
+    const getProject = async () => {
       const projectData = await getOneProject(id);
-      setProjectDetailItem(projectData);
+      setProject(projectData);
     };
-    getProjectDetailItem();
+    getProject();
   }, [id]);
 
   const handleChange = (e) => {
@@ -25,36 +28,31 @@ function ProjectDetail(props) {
   // Our handle submit for adding the item to our project
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const projectDetailItem = await addItemToProject(selectedItem, id);
-    setProjectDetailItem(projectDetailItem);
+    const Project = await addItemToProject(selectedItem, id);
+    setProject(Project);
   };
 
   return (
     <div className='tempbox'>
-      <h3>{projectDetailItem?.name}</h3>
-      {projectDetailItem?.items.map((item) => (
-        <p key={item.id}>{item.name}</p>
-      ))}
-      {/* below is our form for the item drop down */}
-      <form onSubmit={handleSubmit}>
-        <select onChange={handleChange} defaultValue='default'>
-          {/* we can set a default value to tell people to select a item*/}
-          {/* the "defaultValue" on the <select> tag needs to match the "value" on our default <option> tag */}
-          {/* we also add the "disabled" in the <option> to prevent users from selecting it*/}
-          <option disabled value='default'>
-            -- Select an Item --
-          </option>
-          {/* now we loop over all items and return an <option> tag for each */}
-
-          {items.map((item) => (
-            // we track the item's id as the "value" which will get added to state onChange
-            // the item's name goes between the open and close tag which is what the user sees
-            <option value={item.id}>{item.name}</option>
-          ))}
-        </select>
-        <button>Add</button>
-      </form>
-    </div>
+      <Layout>
+        <h2>ProjectDetail</h2>
+      <div>
+        {
+          project &&
+          <div>
+            <h3>{project.name}</h3>
+            <img src={project.img_url} alt={project.name} />
+            <p>{project.description}</p>
+            <Link to={`/projects/${project.id}/edit`}> <button>Update</button>
+            </Link>
+            <button onClick={() => removeProject(project.id)} >
+              Delete Project
+            </button>
+            </div>
+        }
+      </div>
+      </Layout>
+</div>
   );
 }
 

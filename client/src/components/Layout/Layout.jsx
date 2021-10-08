@@ -16,8 +16,8 @@ const Layout = (props) => {
         <hr />
         {props.currentUser && (
           <div>
-            <NavLink to="/projects">Projects</NavLink>
-            <NavLink to="/items">Items</NavLink>
+            <p><NavLink to="/projects">Projects Nav</NavLink></p>
+            <p><NavLink to="/items">Items Nav</NavLink></p>
           </div>
         )}
       </header>

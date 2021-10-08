@@ -1,10 +1,17 @@
 import { useState } from 'react'
+
 import './ProjectCreate.css'
+import Layout from '../../components/Layout/Layout'
 
 function ProjectCreate(props) {
   const [formData, setFormData] = useState({
-    name:''
+    name: '',
+    description: '',
+    category: ''
   })
+
+  const { name, description, category } = formData
+  const { createProject } = props
   
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -15,10 +22,11 @@ function ProjectCreate(props) {
   }
 
   return (
+    <Layout>
     <div className='tempbox'>
       <form onSubmit={(e)=> {
       e.preventDefault()
-      props.handleProjectCreate(formData);
+      createProject(formData);
     }}>
       <h3>Create Project</h3>
       <label>
@@ -29,11 +37,30 @@ function ProjectCreate(props) {
           value={formData.name}
           onChange={handleChange}
         />
+          </label>
+          <label>
+        Description:
+        <input
+          type='text'
+          name='name'
+          value={formData.description}
+          onChange={handleChange}
+        />
+          </label>
+          <label>
+          Category:
+        <input
+          type='text'
+          name='category'
+          value={formData.category}
+          onChange={handleChange}
+        />
       </label>
       <br/>
       <button>Submit</button>
     </form>
     </div>
+    </Layout>
   )
 }
 

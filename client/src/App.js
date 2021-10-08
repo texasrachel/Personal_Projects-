@@ -42,6 +42,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Project Shopping Planner</h1>
+      <p>this is the app page</p>
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
           <Route exact path='/'>
