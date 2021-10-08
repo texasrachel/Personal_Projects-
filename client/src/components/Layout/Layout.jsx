@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Layout = (props) => {
   return (
-    <div>
+    <div className='tempbox'>
       <header>
         <h1>Layout</h1>
         {props.currentUser ? (
@@ -15,7 +15,7 @@ const Layout = (props) => {
         )}
         <hr />
         {props.currentUser && (
-          <div>
+          <div className='tempbox'>
             <p><NavLink to="/projects">Projects Nav</NavLink></p>
             <p><NavLink to="/items">Items Nav</NavLink></p>
           </div>

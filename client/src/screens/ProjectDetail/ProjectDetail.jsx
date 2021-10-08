@@ -6,11 +6,11 @@ import Layout from '../../components/Layout/Layout';
 
 function ProjectDetail(props) {
   const [project, setProject] = useState(null);
-  const [selectedItem, setSelectedItem] = useState('');
+  // const [selectedItem, setSelectedItem] = useState('');
   const { id } = useParams();
   // const { items } = props;
-  const { allProjects, removeProject } = props
-
+  const history = useHistory();
+  
   useEffect(() => {
 
     const getProject = async () => {
@@ -20,17 +20,17 @@ function ProjectDetail(props) {
     getProject();
   }, [id]);
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setSelectedItem(value);
-  };
+  // const handleChange = (e) => {
+  //   const { value } = e.target;
+  //   setSelectedItem(value);
+  // };
 
-  // Our handle submit for adding the item to our project
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const Project = await addItemToProject(selectedItem, id);
-    setProject(Project);
-  };
+  // // Our handle submit for adding the item to our project
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const Project = await addItemToProject(selectedItem, id);
+  //   setProject(Project);
+  // };
 
   return (
     <div className='tempbox'>
@@ -45,9 +45,6 @@ function ProjectDetail(props) {
             <p>{project.description}</p>
             <Link to={`/projects/${project.id}/edit`}> <button>Update</button>
             </Link>
-            <button onClick={() => removeProject(project.id)} >
-              Delete Project
-            </button>
             </div>
         }
       </div>

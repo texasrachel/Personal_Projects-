@@ -10,7 +10,7 @@ function ProjectCreate(props) {
     category: ''
   })
 
-  const { name, description, category } = formData
+  // const { name, description, category } = formData
   const { createProject } = props
   
   const handleChange = (e) => {
