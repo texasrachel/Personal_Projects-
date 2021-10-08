@@ -1,20 +1,25 @@
-import './App.css';
-import {  useState, useEffect } from 'react'
-import { Switch, Route, useHistory } from 'react-router-dom';
+import "./Main.css";
+import { useState, useEffect } from "react";
+import { Switch, Route, useHistory } from "react-router-dom";
 
-import { getAllProjects, postProject, deleteProject, putProject } from '../services/projects'
-import { getAllItems } from '../services/items'
-import Items from './screens/Items/Items'
-import Projects from './screens/Projects/Projects'
-import ProjectEdit from './screens/ProjectEdit/ProjectEdit'
-import ProjectCreate from './screens/ProjectCreate/ProjectCreate'
-import ProjectDetail from './screens/ProjectDetail/ProjectDetail'
+import {
+  getAllProjects,
+  postProject,
+  deleteProject,
+  putProject,
+} from "../../services/projects";
+import { getAllItems } from "../../services/items";
+
+import Items from "../../screens/Items/Items";
+import Projects from "../../screens/Projects/Projects";
+import ProjectEdit from "../../screens/ProjectEdit/ProjectEdit";
+import ProjectCreate from '../../screens/ProjectCreate/ProjectCreate'
+import ProjectDetail from "../../screens/ProjectDetail/ProjectDetail";
 
 function Main() {
-  const [projects, setProjects] = useState([])
-  const [items, setItems] = useState([])
+  const [projects, setProjects] = useState([]);
+  const [items, setItems] = useState([]);
   const history = useHistory();
-
 
   useEffect(() => {
     const getProjects = async () => {
@@ -35,12 +40,14 @@ function Main() {
   const handleProjectCreate = async (projectData) => {
     const newProject = await postProject(projectData);
     setProjects((prevState) => [...prevState, newProject]);
-    history.push('/projects');
+    history.push("/projects");
   };
 
   const handleProjectDelete = async (id) => {
     await deleteProject(id);
-    setProjects((prevState) => prevState.filter((projectItemDetail) => projectItemDetail.id !== id));
+    setProjects((prevState) =>
+      prevState.filter((projectItemDetail) => projectItemDetail.id !== id)
+    );
   };
 
   const handleProjectUpdate = async (id, projectData) => {
@@ -50,54 +57,39 @@ function Main() {
         return project.id === Number(id) ? updatedProject : project;
       })
     );
-    history.push('/projects');
+    history.push("/projects");
   };
 
   return (
     <div>
       <h1>Main Area</h1>
       <Switch>
-        <Route path='/items'>
+        <Route path="/items">
           <Items items={items} />
         </Route>
-        <Route path='/projects'>
-          <Projects projects={projects} handleProjectDelete={handleProjectDelete}/>
+        <Route path="/projects">
+          <Projects
+            projects={projects}
+            handleProjectDelete={handleProjectDelete}
+          />
         </Route>
-        <Route path='/projects/:id'>
+        <Route path="/projects/:id">
           <ProjectDetail items={items} />
         </Route>
-        <Route path='/projects/:id/edit'>
-          <ProjectEdit projects={projects} handleProjectUpdate={handleProjectUpdate}/>
+        <Route path="/projects/:id/edit">
+          <ProjectEdit
+            projects={projects}
+            handleProjectUpdate={handleProjectUpdate}
+          />
         </Route>
-        <Route path='/projects/new'>
+        <Route path="/projects/new">
           <ProjectCreate handleProjectCreate={handleProjectCreate} />
         </Route>
       </Switch>
 
       <div>
-        <form>
-          <>
-            <label htmlFor='username'>Username:
-              <input
-                name='username'
-                value={formData.username}
-                onChange={handleChange}
-              />
-            </label>
-          </>
-          <>
-            <label htmlFor='password'>Password:
-              <input
-                name='password'
-                value={formData.password}
-                onChange={handleChange}
-              />
-            </label>
-          </>
-          <>
-            <button>Submit</button>
-          </>
-        </form>
+        <h1>Main component</h1>
+            
       </div>
     </div>
   );

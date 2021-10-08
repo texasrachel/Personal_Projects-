@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
 const Layout = (props) => {
   return (
@@ -8,24 +8,22 @@ const Layout = (props) => {
         {props.currentUser ? (
           <div>
             <p>{props.currentUser.username}</p>
-            <button onclick={props.handleLogout}>Logout</button>
+            <button onClick={props.handleLogout}>Logout</button>
           </div>
         ) : (
-            <NavLink to='/login'>Login/Register</NavLink>
+          <NavLink to="/login">Login/Register</NavLink>
         )}
         <hr />
         {props.currentUser && (
           <div>
-            <NavLink to='/projects'>Projects</NavLink>
-            <NavLink to='/items'>Items</NavLink>
+            <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/items">Items</NavLink>
           </div>
         )}
       </header>
-      <div>
-        {props.children}
-      </div>
+      <div>{props.children}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getOneProject, addItemsToProject } from '../services/projects';
+import { getOneProject, addItemToProject } from '../../services/projects';
 import './ProjectDetail.css'
 
 function ProjectDetail(props) {
@@ -11,7 +11,7 @@ function ProjectDetail(props) {
 
   useEffect(() => {
     const getProjectDetailItem = async () => {
-      const ProjectData = await getOneProject(id);
+      const projectData = await getOneProject(id);
       setProjectDetailItem(projectData);
     };
     getProjectDetailItem();
@@ -25,7 +25,7 @@ function ProjectDetail(props) {
   // Our handle submit for adding the item to our project
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const projectDetailItem = await addItemsToProject(selectedItem, id);
+    const projectDetailItem = await addItemToProject(selectedItem, id);
     setProjectDetailItem(projectDetailItem);
   };
 

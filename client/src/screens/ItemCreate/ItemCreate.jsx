@@ -4,7 +4,7 @@ import './ItemCreate.css'
 function ItemCreate(props) {
   const { name, value } = e.target
   setFormData((prevState) => ({
-    ..prevState,
+    ...prevState,
     [name]: value
   }))
 }

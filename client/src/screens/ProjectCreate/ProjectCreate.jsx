@@ -2,12 +2,17 @@ import { useState } from 'react'
 import './ProjectCreate.css'
 
 function ProjectCreate(props) {
-  const { name, value } = e.target
-  setFormData((prevState) => ({
-    ..prevState,
-    [name]: value
-  }))
-}
+  const [formData, setFormData] = useState({
+    name:''
+  })
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
 
   return (
     <div className='tempbox'>
