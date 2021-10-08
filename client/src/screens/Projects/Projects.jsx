@@ -14,16 +14,16 @@ function Projects(props) {
       <div className="tempbox">
         <h1> -Projects - </h1>
         {projects.map((project) => (
-          <React.Fragment key={project.id}>
-            <p>{project.name}</p>
-            <Link to={`/projects/%{project.id}`}>
-              <ProjectCard
-                title={project.name}
-                // image={project.img_url}
-                // description={project.description}
-              />
-            </Link>
-          </React.Fragment>
+          <p key={project.id}>
+            {project.name}</p>
+          //   {/* <Link to={`/projects/%{project.id}`}>
+          //     <ProjectCard
+          //       title={project.name}
+          //       // image={project.img_url}
+          //       // description={project.description}
+          //     />
+          //   </Link> */}
+          // {/* </React.Fragment> */}
         ))}
       </div>
       <Link to="/projects/new">New Project</Link>

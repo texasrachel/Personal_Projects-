@@ -6,8 +6,9 @@ import { loginUser, registerUser, verifyUser, removeToken } from './services/aut
 import Layout from './components/Layout/Layout';
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
-import Main from './components/Main/Main'
+// import Main from './components/Main/Main'
 import Footer from './components/Footer/Footer'
+import ProjectContainer from './containers/ProjectContainer/ProjectContainer';
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -45,14 +46,14 @@ const App = () => {
       <p>this is the app page</p>
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
-          <Route exact path='/'>
-            <Main />
-          </Route>
           <Route path='/login'>
             <Login handleLogin={handleLogin} />
           </Route>
           <Route  path='/register'>
             <Register handleRegister={handleRegister} />
+          </Route>
+          <Route path='/'>
+            <ProjectContainer />
           </Route>
         </Switch>
       </Layout>
