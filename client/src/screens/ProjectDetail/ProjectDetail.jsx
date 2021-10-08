@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getOneProject, addItemToProject } from '../../services/projects';
+import { getOneProject } from '../../services/projects';
 import './ProjectDetail.css'
 import Layout from '../../components/Layout/Layout';
 
@@ -9,10 +9,8 @@ function ProjectDetail(props) {
   // const [selectedItem, setSelectedItem] = useState('');
   const { id } = useParams();
   // const { items } = props;
-  const history = useHistory();
-  
-  useEffect(() => {
 
+  useEffect(() => {
     const getProject = async () => {
       const projectData = await getOneProject(id);
       setProject(projectData);
@@ -25,7 +23,7 @@ function ProjectDetail(props) {
   //   setSelectedItem(value);
   // };
 
-  // // Our handle submit for adding the item to our project
+  // // Our handle submit for adding the item to our project --add addItemToProject to head--
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
   //   const Project = await addItemToProject(selectedItem, id);
