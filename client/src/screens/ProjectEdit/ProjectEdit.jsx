@@ -7,18 +7,23 @@ function ProjectEdit(props) {
     name: '',
   });
   const { id } = useParams();
+  const {updateProject, allProjects } = props
 
   useEffect(() => {
     const prefillFormData = () => {
-      const singleProject = props.projects.find(project=> project.id === Number(id) )
-      setFormData({
-        name: singleProject.name,
-      });
+      const singleProject = allProjects.find(project => {
+        return project.id === Number(id)
+    })
+  const { name } = singleProject
+      setFormData({ name });
     }
     if (props.projects.length) {
       prefillFormData();
     }
-  }, [props.projects, id]);
+if (allProjects.length) {
+      prefillFormData()
+    }
+  }, [allProjects, id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +37,7 @@ function ProjectEdit(props) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        props.handleProjectUpdate(id, formData);
+        props.updateProject(id, formData);
       }}
     >
       <h3>Edit Project</h3>

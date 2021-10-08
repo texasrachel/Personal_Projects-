@@ -48,10 +48,10 @@ const App = () => {
           <Route exact path='/'>
             <Main />
           </Route>
-          <Route exact path='/login'>
+          <Route path='/login'>
             <Login handleLogin={handleLogin} />
           </Route>
-          <Route exact path='/register'>
+          <Route  path='/register'>
             <Register handleRegister={handleRegister} />
           </Route>
         </Switch>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getOneProject } from '../../services/projects';
+import { getProject } from '../../services/projects';
 import './ProjectDetail.css'
 import Layout from '../../components/Layout/Layout';
 
@@ -11,11 +11,11 @@ function ProjectDetail(props) {
   // const { items } = props;
 
   useEffect(() => {
-    const getProject = async () => {
-      const projectData = await getOneProject(id);
+    const fetchProject = async () => {
+      const projectData = await getProject(id);
       setProject(projectData);
     };
-    getProject();
+    fetchProject();
   }, [id]);
 
   // const handleChange = (e) => {
@@ -26,7 +26,7 @@ function ProjectDetail(props) {
   // // Our handle submit for adding the item to our project --add addItemToProject to head--
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
-  //   const Project = await addItemToProject(selectedItem, id);
+  //   const project = await addItemToProject(selectedItem, id);
   //   setProject(Project);
   // };
 
@@ -34,18 +34,19 @@ function ProjectDetail(props) {
     <div className='tempbox'>
       <Layout>
         <h2>ProjectDetail</h2>
-      <div>
-        {
-          project &&
-          <div>
-            <h3>{project.name}</h3>
-            <img src={project.img_url} alt={project.name} />
-            <p>{project.description}</p>
-            <Link to={`/projects/${project.id}/edit`}> <button>Update</button>
-            </Link>
-            </div>
-        }
-      </div>
+        <div>
+          {
+            project &&
+            <div>
+              <h3>{project.name}</h3>
+              <img src={project.img_url} alt={project.name} />
+              <p>{project.description}</p>
+              <Link to={`/projects/${project.id}/edit`}>
+                  <button>Update</button>
+              </Link>
+              </div>
+          }
+        </div>
       </Layout>
 </div>
   );

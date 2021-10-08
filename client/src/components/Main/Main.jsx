@@ -24,6 +24,7 @@ function Main() {
   useEffect(() => {
     const getProjects = async () => {
       const projectList = await getAllProjects();
+      console.log(projectList)
       setProjects(projectList);
     };
     getProjects();
@@ -64,15 +65,6 @@ function Main() {
     <div>
       <h1>Main Area</h1>
       <Switch>
-        <Route path="/items">
-          <Items items={items} />
-        </Route>
-        <Route path="/projects">
-          <Projects
-            projects={projects}
-            handleProjectDelete={handleProjectDelete}
-          />
-        </Route>
         <Route path="/projects/:id">
           <ProjectDetail items={items} />
         </Route>
@@ -84,6 +76,15 @@ function Main() {
         </Route>
         <Route path="/projects/new">
           <ProjectCreate handleProjectCreate={handleProjectCreate} />
+        </Route>
+        <Route path="/items">
+          <Items items={items} />
+        </Route>
+        <Route path="/projects">
+          <Projects
+            projects={projects}
+            handleProjectDelete={handleProjectDelete}
+          />
         </Route>
       </Switch>
     </div>
