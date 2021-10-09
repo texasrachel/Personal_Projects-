@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 // import { getAllItems, deleteItem, createItem, editItem } from '../../services/items'
-import { getAllProjects, updateProject } from "../../services/projects";
+import { getAllProjects, updateProject, createProject } from "../../services/projects";
 
 import Projects from "../../screens/Projects/Projects";
-// import ProjectCreate from '../../screens/ProjectCreate/ProjectCreate';
+import ProjectCreate from '../../screens/ProjectCreate/ProjectCreate';
 import ProjectDetail from '../../screens/ProjectDetail/ProjectDetail';
 import ProjectEdit from '../../screens/ProjectEdit/ProjectEdit';
 
@@ -31,9 +31,9 @@ function ProjectContainer() {
 
   return (
     <Switch>
-      {/* <Route path="/projects">
-        <Projects projects={projects} />
-      </Route> */}
+      <Route path="/projects/new">
+        <ProjectCreate createProject={createProject} />
+      </Route>
       <Route path="/projects/:id/edit">
         <ProjectEdit
           fetchProject={fetchProject}

@@ -1,0 +1,38 @@
+.item-card {
+  background: white;
+  width: 24em;
+  border-radius: 0.6em;
+  margin: 1em;
+  overflow: hidden;
+  box-shadow: 3px;
+  transition: all ease 200ms;
+  border: 1px green solid;
+}
+
+.item-card:hover {
+  transform: scale(1.03);
+  box-shadow: 5px;
+}
+
+.item-card img {
+  width: 200px;
+  object-fit: cover;
+}
+
+.item-card h2 {
+  color: darkgrey;
+  font-family: 'Montserrat', sans-serif;
+  transition: all ease-in 100ms;
+}
+
+.item-card p {
+  color: grey;
+}
+
+.item-card h5 {
+  color: lightgrey;
+}
+
+.item-card-body {
+  padding: 10px;
+}

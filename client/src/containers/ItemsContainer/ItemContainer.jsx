@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
-import { getAllItems,  updateItem } from '../../services/items'
+import {
+  getAllItems,
+  // updateItem
+} from '../../services/items'
 
 import Items from "../../screens/Items/Items";
-// import ProjectCreate from '../../screens/ProjectCreate/ProjectCreate';
+// import ItemCreate from '../../screens/ItemCreate/ItemCreate';
 import ItemDetail from '../../screens/ItemDetail/ItemDetail';
 // import ItemEdit from '../../screens/ItemEdit/ItemEdit';
 

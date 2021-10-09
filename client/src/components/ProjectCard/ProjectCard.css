@@ -1,4 +1,4 @@
-.card {
+.project-card {
   background: white;
   width: 24em;
   border-radius: 0.6em;
@@ -9,30 +9,30 @@
   border: 1px green solid;
 }
 
-.card:hover {
+.project-card:hover {
   transform: scale(1.03);
   box-shadow: 5px;
 }
 
-.card img {
+.project-card img {
   width: 200px;
   object-fit: cover;
 }
 
-.card h2 {
+.project-card h2 {
   color: darkgrey;
   font-family: 'Montserrat', sans-serif;
   transition: all ease-in 100ms;
 }
 
-.card p {
+.project-card p {
   color: grey;
 }
 
-.card h5 {
+.project-card h5 {
   color: lightgrey;
 }
 
-.card-body {
+.project-card-body {
   padding: 10px;
 }

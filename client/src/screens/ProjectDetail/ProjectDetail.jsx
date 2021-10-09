@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import {
   getProject,
+  deleteProject
   // addItemToProject
 } from '../../services/projects';
 import './ProjectDetail.css'
@@ -11,6 +12,7 @@ function ProjectDetail(props) {
   const [project, setProject] = useState(null);
   // const [selectedItem, setSelectedItem] = useState('');
   const { id } = useParams();
+  const history = useHistory()
   // const { items } = props;
 
   useEffect(() => {
@@ -44,9 +46,21 @@ function ProjectDetail(props) {
               <h3>{project.name}</h3>
               <img src={project.img_url} alt={project.name} />
               <p>{project.description}</p>
+              <p>{project.category}</p>
+              <p>{project.instructions_link}</p>
+              <p>{project.made_for}</p>
+              <p>{project.notes}</p>
               <Link to={`/projects/${project.id}/edit`}>
                   <button>Update</button>
               </Link>
+              <button
+                onClick={() => {
+                  deleteProject(project.id)
+                  history.push('/projects')
+                }}
+              >
+            Delete
+          </button>
               </div>
           }
         </div>

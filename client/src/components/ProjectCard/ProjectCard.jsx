@@ -4,11 +4,11 @@ function ProjectCard(props) {
   const { name, img_url, description, category, instructions_link, made_for, notes, user_id, item_id } = props;
 
   return (
-    <div className="card">
+    <div className="project-card">
       <p>ProjectCard</p>
       <h2>{name}</h2>
       <img src={img_url} alt={name} />
-      <div className="card-body">
+      <div className="project-card-body">
         <p>{description}</p>
         <p>{ category }</p>
         <p>{ instructions_link }</p>

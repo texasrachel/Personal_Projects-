@@ -20,7 +20,7 @@ export const updateItem = async (id, itemData) => {
   return resp.data;
 };
 
-export const deleteItems = async id => {
+export const deleteItem = async id => {
   const resp = await api.delete(`/items/${id}`);
   return resp.data;
 };

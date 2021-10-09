@@ -160,6 +160,9 @@ function ProjectEdit(props) {
 
           <br />
           <button>Submit</button>
+          <button onClick={() => props.handleProjectDelete(project.id)}>
+            Delete
+          </button>
         </form>
       </div>
     </Layout>

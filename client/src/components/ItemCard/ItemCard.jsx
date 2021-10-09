@@ -18,12 +18,12 @@ function ItemCard(props) {
   } = props;
 
   return (
-    <div className="card">
-      <p>ItemCard</p>
+    <div className="item-card">
+      <p>Item Card</p>
       <h2>{name}</h2>
       <img src={img_url} alt={name} />
-      <div className="card-body">
-        <p>{description}</p>
+      <p>{description}</p>
+      <div className="item-card-body">
         <p>{category}</p>
         <p>{price}</p>
         <p>{url}</p>

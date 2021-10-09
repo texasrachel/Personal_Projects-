@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getItem } from "../../services/items"
-import './ItemDetail.css'
-import Layout from '../../components/Layout/Layout'
+import { getItem } from "../../services/items";
+import "./ItemDetail.css";
+import Layout from "../../components/Layout/Layout";
 
 function ItemDetail(props) {
   const [item, setItem] = useState(null);
@@ -24,21 +24,20 @@ function ItemDetail(props) {
   // };
 
   return (
-    <div className='temp-box'>
-          <Layout>
+    <div className="temp-box">
+      <Layout>
         <h2>Item Detail</h2>
         <div>
-          {
-            item &&
+          {item && (
             <div>
               <h3>{item.name}</h3>
               <img src={item.img_url} alt={item.name} />
               <p>{item.description}</p>
               <Link to={`/items/${item.id}/edit`}>
-                  <button>Update</button>
+                <button>Update</button>
               </Link>
-              </div>
-          }
+            </div>
+          )}
         </div>
       </Layout>
     </div>
