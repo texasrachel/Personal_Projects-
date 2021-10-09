@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <footer>
       <div> 
-        <a href='github'>Github</a>
+        <p><a href='github'>Github</a></p>
         <a href='linkedin'>LinkedIn</a>
       </div>
     </footer>

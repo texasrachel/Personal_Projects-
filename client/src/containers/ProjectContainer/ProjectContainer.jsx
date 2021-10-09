@@ -24,7 +24,7 @@ function ProjectContainer() {
 
   return (
   <Switch>
-    <Route path to='/projects'>
+    <Route path='/projects'>
       <Projects projects={projects} />
     </Route>
   </Switch>
