@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import "./Projects.css";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
-// import Layout from "../../components/Layout/Layout";
 
 function Projects(props) {
   const { projects } = props;

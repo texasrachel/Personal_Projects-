@@ -1,7 +1,21 @@
-import './ItemCard.css'
+import "./ItemCard.css";
 
 function ItemCard(props) {
-  const { name, img_url, description, category, price, url, store_name, store_address, bought, currently_at, notes,, user_id, project_id } = props;
+  const {
+    name,
+    img_url,
+    description,
+    category,
+    price,
+    url,
+    store_name,
+    store_address,
+    bought,
+    currently_at,
+    notes,
+    user_id,
+    project_id,
+  } = props;
 
   return (
     <div className="card">
@@ -10,14 +24,19 @@ function ItemCard(props) {
       <img src={img_url} alt={name} />
       <div className="card-body">
         <p>{description}</p>
-        <p>{ category }</p>
-        <p>{ instructions_link }</p>
-        <p>{ made_for }</p>
-        <p>{ notes }</p>
-        <p>{ user_id }</p>
-        <p>{ item_id }</p>
+        <p>{category}</p>
+        <p>{price}</p>
+        <p>{url}</p>
+        <p>{price}</p>
+        <p>{store_name}</p>
+        <p>{store_address}</p>
+        <p>{bought}</p>
+        <p>{currently_at}</p>
+        <p>{notes}</p>
+        <p>{user_id}</p>
+        <p>{project_id}</p>
       </div>
-  </div>
+    </div>
   );
 }
 

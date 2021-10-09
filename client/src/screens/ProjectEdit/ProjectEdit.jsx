@@ -39,7 +39,6 @@ function ProjectEdit(props) {
       const oneProject = props.projects.find(
         (project) => project.id === Number(id)
       );
-      // console.log(project.id)
       // const { name, img_url, description } = oneProject;
       setProject({
         name: oneProject.name,
@@ -78,10 +77,10 @@ function ProjectEdit(props) {
 
   return (
     <Layout>
-      <div className="form-container">
+      <div className="project-form-container">
         <form onSubmit={handleSubmit}>
           <h3>Edit Project</h3>
-          <p className="form-name">
+          <p className="project-form-name">
             <label>
               Name:
               <input
@@ -92,7 +91,7 @@ function ProjectEdit(props) {
               />
             </label>
           </p>
-          <p className="form-image">
+          <p className="project-form-image">
             <label>
               Image Url:
               <input
@@ -103,7 +102,7 @@ function ProjectEdit(props) {
               />
             </label>
           </p>
-          <p className="form-description">
+          <p className="project-form-description">
             <label>
               Description:
               <input
@@ -114,7 +113,7 @@ function ProjectEdit(props) {
               />
             </label>
           </p>
-          <p className="form-category">
+          <p className="project-form-category">
             <label>
               Category:
               <input
@@ -125,7 +124,7 @@ function ProjectEdit(props) {
               />
             </label>
           </p>
-          <p className="form-instructions-link">
+          <p className="project-form-instructions-link">
             <label>
               Instructions Link:
               <input
@@ -136,7 +135,7 @@ function ProjectEdit(props) {
               />
             </label>
           </p>
-          <p className="form-made-for">
+          <p className="project-form-made-for">
             <label>
               For:
               <input
@@ -147,7 +146,7 @@ function ProjectEdit(props) {
               />
             </label>
           </p>
-          <p className="form-notes">
+          <p className="project-form-notes">
             <label>
               Notes:
               <input

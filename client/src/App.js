@@ -6,8 +6,8 @@ import { loginUser, registerUser, verifyUser, removeToken } from './services/aut
 import Layout from './components/Layout/Layout';
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
-// import Main from './components/Main/Main'
 import Footer from './components/Footer/Footer'
+import ItemContainer from './containers/ItemsContainer/ItemContainer'
 import ProjectContainer from './containers/ProjectContainer/ProjectContainer';
 
 const App = () => {
@@ -51,6 +51,9 @@ const App = () => {
           </Route>
           <Route  path='/register'>
             <Register handleRegister={handleRegister} />
+          </Route>
+          <Route path='/items'>
+            <ItemContainer />
           </Route>
           <Route path='/'>
             <ProjectContainer />

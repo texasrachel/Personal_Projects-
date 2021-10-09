@@ -1,33 +1,46 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { getOneItem } from "../services/Items";
+import { Link, useParams } from "react-router-dom";
+import { getItem } from "../../services/items"
 import './ItemDetail.css'
+import Layout from '../../components/Layout/Layout'
 
 function ItemDetail(props) {
-  const [ItemDetail, setItemDetail] = useState(null);
-  const [selectedItem, setSelectedItem] = useState("");
+  const [item, setItem] = useState(null);
+  // const [selectedItem, setSelectedItem] = useState("");
   const { id } = useParams();
   // const { projects } = props;
 
   useEffect(() => {
-    const getItemDetail = async () => {
-      const ItemData = await getOneItem(id);
-      setItemDetail(ItemData);
+    const fetchItem = async () => {
+      const itemData = await getItem(id);
+      setItem(itemData);
     };
-    getItemDetail();
+    fetchItem();
   }, [id]);
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setSelectedItem(value);
-  };
+  // const handleChange = (e) => {
+  //   const { value } = e.target;
+  //   setSelectedItem(value);
+  // };
 
   return (
-    <div className='tempbox'>
-      <h3>{itemDetail?.name}</h3>
-      {itemDetail?.items.map((item) => (
-        <p key={item.id}>{item.name}</p>
-      ))}
+    <div className='temp-box'>
+          <Layout>
+        <h2>Item Detail</h2>
+        <div>
+          {
+            item &&
+            <div>
+              <h3>{item.name}</h3>
+              <img src={item.img_url} alt={item.name} />
+              <p>{item.description}</p>
+              <Link to={`/items/${item.id}/edit`}>
+                  <button>Update</button>
+              </Link>
+              </div>
+          }
+        </div>
+      </Layout>
     </div>
   );
 }

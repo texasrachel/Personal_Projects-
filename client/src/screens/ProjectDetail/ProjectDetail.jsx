@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getProject } from '../../services/projects';
+import {
+  getProject,
+  // addItemToProject
+} from '../../services/projects';
 import './ProjectDetail.css'
 import Layout from '../../components/Layout/Layout';
 
@@ -23,11 +26,11 @@ function ProjectDetail(props) {
   //   setSelectedItem(value);
   // };
 
-  // // Our handle submit for adding the item to our project --add addItemToProject to head--
+  // // // Our handle submit for adding the item to our project --add addItemToProject to head--
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
   //   const project = await addItemToProject(selectedItem, id);
-  //   setProject(Project);
+  //   setProject(project);
   // };
 
   return (
