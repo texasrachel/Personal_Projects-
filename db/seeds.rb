@@ -20,21 +20,25 @@ p "Created #{User.count} users"
 Project.create!(
   name: "Backyard",  
   user: @admin, 
+  img_url: "https://res.cloudinary.com/texasrachel/image/upload/v1633797712/psp/back1_jddei8.jpg",
   description: "Add firepit, chairs, and sunsail to backyard", 
   category: "Home")
 Project.create!(
   name: "Knit Gnome",  
   user: @admin,
+  img_url: "https://res.cloudinary.com/texasrachel/image/upload/v1633797709/psp/gnome1_goznzh.jpg",
   description: "Knit a gnome", 
   category: "Knitting")
 Project.create!(
   name: "Keyboard",  
   user: @admin, 
-  description: "Make a mechanical keyboard", 
+  img_url: "https://res.cloudinary.com/texasrachel/image/upload/v1633797709/psp/key4_zhmtda.jpg", 
+  description: "Put together a mechanical keyboard",
   category: "Computers")
 Project.create!(
   name: "Macarons",  
   user: @admin, 
+  img_url: "https://res.cloudinary.com/texasrachel/image/upload/v1633797710/psp/macaron1_lyo0np.jpg",
   description: "Make macarons", 
   category: "Cooking")
 
