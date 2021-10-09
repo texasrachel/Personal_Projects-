@@ -31,7 +31,7 @@ function ProjectDetail(props) {
   // };
 
   return (
-    <div className='tempbox'>
+    <div className='temp-box'>
       <Layout>
         <h2>ProjectDetail</h2>
         <div>
