@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 // import { getAllItems, deleteItem, createItem, editItem } from '../../services/items'
-import { getAllProjects, putProject } from "../../services/projects";
+import { getAllProjects, updateProject } from "../../services/projects";
 
 import Projects from "../../screens/Projects/Projects";
 // import ProjectCreate from '../../screens/ProjectCreate/ProjectCreate';
@@ -21,8 +21,8 @@ function ProjectContainer() {
     getProjects();
   }, []);
 
-  const updateProject = async (id, projectData) => {
-    const updatedProject = await putProject(id, projectData)
+  const fetchProject = async (id, projectData) => {
+    const updatedProject = await updateProject(id, projectData)
     setProjects(prevState => prevState.map(project => {
       return project.id === Number(id) ? updatedProject : project
     })
@@ -36,7 +36,7 @@ function ProjectContainer() {
       </Route> */}
       <Route path="/projects/:id/edit">
         <ProjectEdit
-          updateProject={updateProject}
+          fetchProject={fetchProject}
           projects={projects}
         />
       </Route>

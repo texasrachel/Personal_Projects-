@@ -20,7 +20,7 @@ export const deleteProject = async (id) => {
   return resp;
 };
 
-export const putProject = async (id, projectData) => {
+export const updateProject = async (id, projectData) => {
   const resp = await api.put(`/projects/${id}`, { project: projectData });
   return resp.data;
 };

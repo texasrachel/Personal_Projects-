@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
-import { putProject } from "../../services/projects";
+import { updateProject } from "../../services/projects";
 import "./ProjectEdit.css";
 
 function ProjectEdit(props) {
@@ -68,7 +68,7 @@ function ProjectEdit(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const update = await putProject(id, project);
+    const update = await updateProject(id, project);
     setUpdate(update);
   };
 
