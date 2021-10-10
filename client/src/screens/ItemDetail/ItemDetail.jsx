@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { getItem } from "../../services/items";
+import { Link, useParams, useHistory } from "react-router-dom";
+import {
+  getItem,
+  deleteItem
+} from "../../services/items";
 import "./ItemDetail.css";
 import Layout from "../../components/Layout/Layout";
 
@@ -9,6 +12,7 @@ function ItemDetail(props) {
   // const [selectedItem, setSelectedItem] = useState("");
   const { id } = useParams();
   // const { projects } = props;
+  const history = useHistory()
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -36,6 +40,14 @@ function ItemDetail(props) {
               <Link to={`/items/${item.id}/edit`}>
                 <button>Update</button>
               </Link>
+              <button
+                onClick={() => {
+                  deleteItem(item.id)
+                  history.push('/items')
+                }}
+              >
+            Delete
+          </button>
             </div>
           )}
         </div>
