@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link, useParams, useHistory } from "react-router-dom";
 import {
   getProject,
   deleteProject,
-  // addItemToProject
-} from '../../services/projects';
-import './ProjectDetail.css'
-import Layout from '../../components/Layout/Layout';
+  addItemToProject,
+} from "../../services/projects";
+import "./ProjectDetail.css";
+import Layout from "../../components/Layout/Layout";
 
 function ProjectDetail(props) {
   const [project, setProject] = useState(null);
-  // const [selectedItem, setSelectedItem] = useState('');
+  const [selectedItem, setSelectedItem] = useState("");
   const { id } = useParams();
-  const history = useHistory()
+  const history = useHistory();
   const { items } = props;
 
   useEffect(() => {
@@ -23,25 +23,28 @@ function ProjectDetail(props) {
     fetchProject();
   }, [id]);
 
-  // const handleChange = (e) => {
-  //   const { value } = e.target;
-  //   setSelectedItem(value);
-  // };
+  const handleChange = (e) => {
+    const { value } = e.target;
+    setSelectedItem(value);
+  };
 
-  // // Our handle submit for adding the item to our project --add addItemToProject to head--
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const project = await addItemToProject(selectedItem, id);
-  //   setProject(project);
-  // };
+  // Our handle submit for adding the item to our project --add addItemToProject to head--
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(selectedItem);
+    console.log(id);
+    const project = await addItemToProject(id, selectedItem);
+    setProject(project);
+    //add history.push 
+    //{project.item display map}
+  };
 
   return (
-    <div className='temp-box'>
+    <div className="temp-box">
       <Layout>
         <h2>ProjectDetail</h2>
         <div>
-          {
-            project &&
+          {project && (
             <div>
               <h3>{project.name}</h3>
               <img src={project.img_url} alt={project.name} />
@@ -50,33 +53,36 @@ function ProjectDetail(props) {
               <p>{project.instructions_link}</p>
               <p>{project.made_for}</p>
               <p>{project.notes}</p>
+
               <form onSubmit={handleSubmit}>
-                <select onChange={handleChange} defaultValue='default'>
-                <option disabled value='default'>
-                  -- Select an Item --
-                </option>
-                {items.map((item) => {
-                  <option value={item.id}>{item.name}</option>
-                })}
+                <select onChange={handleChange} defaultValue="default">
+                  <option disabled value="default">
+                    -- Select an Item --
+                  </option>
+                  {items.map((item) => {
+                    return <option value={item.id}>{item.name}</option>;
+                  })}
                 </select>
-                </form>
+                <button type="submit">Submit Item</button>
+              </form>
+<br />
               <Link to={`/projects/${project.id}/edit`}>
-                  <button>Update</button>
+                <button>Edit</button>
               </Link>
               <button
                 onClick={() => {
-                  deleteProject(project.id)
-                  history.push('/projects')
+                  deleteProject(project.id);
+                  history.push("/projects");
                 }}
               >
-            Delete
-          </button>
-              </div>
-          }
+                Delete
+              </button>
+            </div>
+          )}
         </div>
       </Layout>
-</div>
+    </div>
   );
 }
 
-export default ProjectDetail
+export default ProjectDetail;

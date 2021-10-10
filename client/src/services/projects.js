@@ -25,7 +25,7 @@ export const deleteProject = async (id) => {
   return resp;
 };
 
-export const addItemToProject = async (itemId, id) => {
-  const resp = await api.put(`/items/${itemId}/projects/${id}`);
+export const addItemToProject = async (id, itemId) => {
+  const resp = await api.put(`/projects/${id}/items/${itemId}/`);
   return resp.data;
 };

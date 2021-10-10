@@ -40,14 +40,14 @@ class ProjectsController < ApplicationController
     @project.destroy
   end
 
-  # add items to projects
-  def add_items_to_projects
-    @projects = Project.find(params[:id])
-    @items = Item.find(prarams[:item_id])
+  # add item to project
+  def add_item_to_project
+    @project = Project.find(params[:id])
+    @item = Item.find(params[:item_id])
 
-    @project.items << @items
+    @project.items << @item
 
-    render json: @projects, include: :items
+    render json: @project, include: :items
   end
 
   private

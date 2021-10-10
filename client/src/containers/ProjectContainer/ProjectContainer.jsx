@@ -6,6 +6,9 @@ import {
   updateProject,
   createProject
 } from "../../services/projects";
+import {
+  getAllItems
+} from '../../services/items'
 
 import Projects from "../../screens/Projects/Projects";
 import ProjectCreate from '../../screens/ProjectCreate/ProjectCreate';
@@ -14,6 +17,7 @@ import ProjectEdit from '../../screens/ProjectEdit/ProjectEdit';
 
 function ProjectContainer() {
   const [projects, setProjects] = useState([]);
+  const [items, setItems] = useState([])
   // const history = useHistory();
 
   useEffect(() => {
@@ -24,6 +28,15 @@ function ProjectContainer() {
     };
     getProjects();
   }, []);
+
+  useEffect(() => {
+    const getItems = async () => {
+      const itemList = await getAllItems()
+      console.log(itemList)
+      setItems(itemList)
+    }
+    getItems()
+  },[])
 
   const fetchProject = async (id, projectData) => {
     const updatedProject = await updateProject(id, projectData)
@@ -45,7 +58,7 @@ function ProjectContainer() {
         />
       </Route>
       <Route path="/projects/:id">
-        <ProjectDetail projects={projects} />
+        <ProjectDetail projects={projects} items={items} />
       </Route>
       <Route path="/projects">
         <Projects projects={projects} />
