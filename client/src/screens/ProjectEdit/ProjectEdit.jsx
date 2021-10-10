@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
-import Layout from "../../components/Layout/Layout";
+import LayoutComponent from "../../components/LayoutComponent/LayoutComponent";
 import { updateProject } from "../../services/projects";
 import "./ProjectEdit.css";
 
@@ -75,7 +75,7 @@ function ProjectEdit(props) {
   }
 
   return (
-    <Layout>
+    <LayoutComponent>
       <div className="project-form-container">
         <form onSubmit={handleSubmit}>
           <h3>Edit Project</h3>
@@ -164,7 +164,7 @@ function ProjectEdit(props) {
           </button>
         </form>
       </div>
-    </Layout>
+    </LayoutComponent>
   );
 }
 

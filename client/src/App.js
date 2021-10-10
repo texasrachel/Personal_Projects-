@@ -1,18 +1,23 @@
 import './App.css';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, React } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom';
 import { loginUser, registerUser, verifyUser, removeToken } from './services/auth'
 
-import Layout from './components/Layout/Layout';
+import LayoutComponent from './components/LayoutComponent/LayoutComponent';
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import Footer from './components/Footer/Footer'
 import ItemContainer from './containers/ItemsContainer/ItemContainer'
 import ProjectContainer from './containers/ProjectContainer/ProjectContainer';
 
+import { Layout, Menu } from 'antd';
+
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
+
+  const { Header, Content, SidebarMenu } = Layout;
+  const { Item } = Menu;
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -42,26 +47,47 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Project Shopping Planner</h1>
-      <p>this is the app page</p>
-      <Layout currentUser={currentUser} handleLogout={handleLogout}>
-        <Switch>
-          <Route path='/login'>
-            <Login handleLogin={handleLogin} />
-          </Route>
-          <Route  path='/register'>
-            <Register handleRegister={handleRegister} />
-          </Route>
-          <Route path='/items'>
-            <ItemContainer />
-          </Route>
-          <Route path='/'>
-            <ProjectContainer />
-          </Route>
-        </Switch>
-      </Layout>
+      <Layout >
+        <SidebarMenu className='sidebar'>
+          <div className="logo" />
+          <Menu >
+            <Item key="/">
+              Home
+            </Item>
+            <Item key="/projects">
+              Projects
+            </Item>
+            <Item key="/items">
+              Items
+            </Item>
+          </Menu >
+        </SidebarMenu >
+
+        <Header>Header</Header>
+
+        <Content>
+          <h1>Project Shopping Planner</h1>
+          <p>this is the app page</p>
+          <LayoutComponent currentUser={currentUser} handleLogout={handleLogout}>
+            <Switch>
+              <Route path='/login'>
+                <Login handleLogin={handleLogin} />
+              </Route>
+              <Route path='/register'>
+                <Register handleRegister={handleRegister} />
+              </Route>
+              <Route path='/items'>
+                <ItemContainer />
+              </Route>
+              <Route path='/'>
+                <ProjectContainer />
+              </Route>
+            </Switch>
+            </LayoutComponent>
+        </Content>
       <Footer />
-    </div>
+    </Layout >
+      </div >
   );
 }
 

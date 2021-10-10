@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import Layout from '../../components/Layout/Layout'
+import LayoutComponent from '../../components/LayoutComponent/LayoutComponent'
 import { updateItem } from '../../services/items';
 import './ItemEdit.css'
 
@@ -87,7 +87,7 @@ function ItemEdit(props) {
   }
 
   return (
-    <Layout>
+    <LayoutComponent>
       <div className="item-form-container">
         <form onSubmit={handleSubmit}>
           <h3>Edit Item</h3>
@@ -216,7 +216,7 @@ function ItemEdit(props) {
       <button>Submit</button>
         </form>
       </div>
-        </Layout>
+        </LayoutComponent>
   );
 }
 

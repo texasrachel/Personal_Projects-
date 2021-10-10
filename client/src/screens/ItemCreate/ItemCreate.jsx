@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import './ItemCreate.css'
-import Layout from '../../components/Layout/Layout'
+import LayoutComponent from '../../components/LayoutComponent/LayoutComponent'
 
 function ItemCreate(props) {
   
@@ -47,7 +47,7 @@ const {
     }))
   }
   return (
-  <Layout>
+  <LayoutComponent>
     <div className='temp-box'>
       <form onSubmit={(e)=> {
       e.preventDefault()
@@ -180,7 +180,7 @@ const {
       <button>Submit</button>
     </form>
       </div>
-      </Layout>
+      </LayoutComponent>
   )
 }
 

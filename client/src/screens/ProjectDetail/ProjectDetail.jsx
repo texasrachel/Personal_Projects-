@@ -6,7 +6,7 @@ import {
   // addItemToProject
 } from '../../services/projects';
 import './ProjectDetail.css'
-import Layout from '../../components/Layout/Layout';
+import LayoutComponent from '../../components/LayoutComponent/LayoutComponent';
 
 function ProjectDetail(props) {
   const [project, setProject] = useState(null);
@@ -37,7 +37,7 @@ function ProjectDetail(props) {
 
   return (
     <div className='temp-box'>
-      <Layout>
+      <LayoutComponent>
         <h2>ProjectDetail</h2>
         <div>
           {
@@ -64,7 +64,7 @@ function ProjectDetail(props) {
               </div>
           }
         </div>
-      </Layout>
+      </LayoutComponent>
 </div>
   );
 }

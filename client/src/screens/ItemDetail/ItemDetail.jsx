@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getItem } from "../../services/items";
 import "./ItemDetail.css";
-import Layout from "../../components/Layout/Layout";
+import LayoutComponent from "../../components/LayoutComponent/LayoutComponent";
 
 function ItemDetail(props) {
   const [item, setItem] = useState(null);
@@ -25,7 +25,7 @@ function ItemDetail(props) {
 
   return (
     <div className="temp-box">
-      <Layout>
+      <LayoutComponent>
         <h2>Item Detail</h2>
         <div>
           {item && (
@@ -39,7 +39,7 @@ function ItemDetail(props) {
             </div>
           )}
         </div>
-      </Layout>
+      </LayoutComponent>
     </div>
   );
 }
