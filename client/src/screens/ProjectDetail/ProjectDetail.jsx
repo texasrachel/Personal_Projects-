@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import {
   getProject,
-  deleteProject
-  // addItemToProject
+  deleteProject,
+  addItemToProject
 } from '../../services/projects';
 import './ProjectDetail.css'
 import Layout from '../../components/Layout/Layout';
 
 function ProjectDetail(props) {
   const [project, setProject] = useState(null);
-  // const [selectedItem, setSelectedItem] = useState('');
+  const [selectedItem, setSelectedItem] = useState('');
   const { id } = useParams();
   const history = useHistory()
-  // const { items } = props;
+  const { items } = props;
 
   useEffect(() => {
     const fetchProject = async () => {
@@ -23,17 +23,17 @@ function ProjectDetail(props) {
     fetchProject();
   }, [id]);
 
-  // const handleChange = (e) => {
-  //   const { value } = e.target;
-  //   setSelectedItem(value);
-  // };
+  const handleChange = (e) => {
+    const { value } = e.target;
+    setSelectedItem(value);
+  };
 
-  // // // Our handle submit for adding the item to our project --add addItemToProject to head--
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const project = await addItemToProject(selectedItem, id);
-  //   setProject(project);
-  // };
+  // Our handle submit for adding the item to our project --add addItemToProject to head--
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const project = await addItemToProject(selectedItem, id);
+    setProject(project);
+  };
 
   return (
     <div className='temp-box'>
@@ -50,6 +50,16 @@ function ProjectDetail(props) {
               <p>{project.instructions_link}</p>
               <p>{project.made_for}</p>
               <p>{project.notes}</p>
+              <form onSubmit={handleSubmit}>
+                <select onChange={handleChange} defaultValue='default'>
+                <option disabled value='default'>
+                  -- Select an Item --
+                </option>
+                {items.map((item) => {
+                  <option value={item.id}>{item.name}</option>
+                })}
+                </select>
+                </form>
               <Link to={`/projects/${project.id}/edit`}>
                   <button>Update</button>
               </Link>
