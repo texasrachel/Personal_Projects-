@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 // import { getAllItems, deleteItem, createItem, editItem } from '../../services/items'
-import { getAllProjects, updateProject, createProject } from "../../services/projects";
+import {
+  getAllProjects,
+  updateProject,
+  createProject
+} from "../../services/projects";
 
 import Projects from "../../screens/Projects/Projects";
 import ProjectCreate from '../../screens/ProjectCreate/ProjectCreate';

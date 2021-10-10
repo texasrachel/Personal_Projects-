@@ -15,8 +15,8 @@ function Items(props) {
           <React.Fragment key={item.id}>
             <Link to={`/items/${item.id}`}>
               <ItemCard
-                title={item.name}
-                image={item.img_url}
+                name={item.name}
+                img_url={item.img_url}
                 description={item.description}
               />
             </Link>

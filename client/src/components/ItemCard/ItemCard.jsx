@@ -13,8 +13,8 @@ function ItemCard(props) {
     bought,
     currently_at,
     notes,
-    user_id,
-    project_id,
+    // user_id,
+    // project_id,
   } = props;
 
   return (
@@ -33,8 +33,8 @@ function ItemCard(props) {
         <p>{bought}</p>
         <p>{currently_at}</p>
         <p>{notes}</p>
-        <p>{user_id}</p>
-        <p>{project_id}</p>
+        {/* <p>{user_id}</p>
+        <p>{project_id}</p> */}
       </div>
     </div>
   );

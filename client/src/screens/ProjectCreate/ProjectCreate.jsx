@@ -4,6 +4,7 @@ import './ProjectCreate.css'
 import Layout from '../../components/Layout/Layout'
 
 function ProjectCreate(props) {
+
   const [project, setProject] = useState({
     name: "",
     img_url: "",
@@ -12,8 +13,8 @@ function ProjectCreate(props) {
     instructions_link: "",
     made_for: "",
     notes: "",
-    user_id: "",
-    item_id: "",
+    // user_id: "",
+    // item_id: "",
   });
 
   const {
@@ -24,8 +25,8 @@ function ProjectCreate(props) {
     instructions_link,
     made_for,
     notes,
-    user_id,
-    item_id,
+    // user_id,
+    // item_id,
   } = project;
 
   const { createProject } = props

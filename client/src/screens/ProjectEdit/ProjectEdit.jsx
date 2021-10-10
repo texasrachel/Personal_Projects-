@@ -13,8 +13,8 @@ function ProjectEdit(props) {
     instructions_link: "",
     made_for: "",
     notes: "",
-    user_id: "",
-    item_id: "",
+    // user_id: "",
+    // item_id: "",
   });
   const { id } = useParams();
   const {
@@ -25,8 +25,8 @@ function ProjectEdit(props) {
     instructions_link,
     made_for,
     notes,
-    user_id,
-    item_id,
+    // user_id,
+    // item_id,
   } = project;
   // const { updateProject } = props;
   // console.log(props.projects);
@@ -36,10 +36,9 @@ function ProjectEdit(props) {
 
   useEffect(() => {
     const fillProject = () => {
-      const oneProject = props.projects.find(
-        (project) => project.id === Number(id)
+      const oneProject = props.projects.find((project) =>
+        project.id === Number(id)
       );
-      // const { name, img_url, description } = oneProject;
       setProject({
         name: oneProject.name,
         img_url: oneProject.img_url,

@@ -11,13 +11,13 @@ function Projects(props) {
   return (
     <div className="temp-box">
       <h1> -Projects- </h1>
-      <div className="project-card">
+      <div className="project-map">
         {projects.map((project) => (
           <React.Fragment key={project.id}>
             <Link to={`/projects/${project.id}`}>
               <ProjectCard
-                title={project.name}
-                image={project.img_url}
+                name={project.name}
+                img_url={project.img_url}
                 description={project.description}
               />
             </Link>

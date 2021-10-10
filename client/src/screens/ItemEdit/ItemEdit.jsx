@@ -17,8 +17,8 @@ function ItemEdit(props) {
       bought: "",
       currently_at: "",
       notes: "",
-      user_id: "",
-      project_id: ""
+      // user_id: "",
+      // project_id: ""
   });
   const { id } = useParams();
   const {
@@ -33,15 +33,19 @@ function ItemEdit(props) {
     bought,
     currently_at,
     notes,
-    user_id,
-    project_id,
+    // user_id,
+    // project_id,
   } = item
 
+  console.log(props.items)
+  
   const [isUpdated, setUpdate] = useState(false)
 
   useEffect(() => {
     const fillItem = () => {
-      const oneItem = props.items.find((item=)> item.id === Number(id) )
+      const oneItem = props.items.find((item) =>
+        item.id === Number(id)
+      )
       setItem({
         name: oneItem.name,
         img_url: oneItem.img_url,
@@ -74,6 +78,7 @@ function ItemEdit(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const update = await updateItem(id, item);
+    console.log(item)
     setUpdate(update);
   };
 
@@ -162,6 +167,7 @@ function ItemEdit(props) {
                 onChange={handleChange}
               />
             </label>
+            </p>
             <p className="item-form-store_name">
             <label>
               Store Name:
@@ -183,6 +189,7 @@ function ItemEdit(props) {
                 onChange={handleChange}
               />
             </label>
+            </p>
             <p className="item-form-bought">
             <label>
               Bought:
@@ -209,7 +216,7 @@ function ItemEdit(props) {
       <button>Submit</button>
         </form>
       </div>
-      </Layout>
+        </Layout>
   );
 }
 
