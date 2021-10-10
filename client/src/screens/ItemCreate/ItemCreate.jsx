@@ -111,7 +111,7 @@ const {
           </p>
           <p className="item-form-url">
             <label>
-              For:
+              URL:
               <input
                 type="text"
                 name="url"
