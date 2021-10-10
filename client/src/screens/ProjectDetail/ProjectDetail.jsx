@@ -3,14 +3,14 @@ import { Link, useParams, useHistory } from 'react-router-dom';
 import {
   getProject,
   deleteProject,
-  addItemToProject
+  // addItemToProject
 } from '../../services/projects';
 import './ProjectDetail.css'
 import Layout from '../../components/Layout/Layout';
 
 function ProjectDetail(props) {
   const [project, setProject] = useState(null);
-  const [selectedItem, setSelectedItem] = useState('');
+  // const [selectedItem, setSelectedItem] = useState('');
   const { id } = useParams();
   const history = useHistory()
   const { items } = props;
@@ -23,17 +23,17 @@ function ProjectDetail(props) {
     fetchProject();
   }, [id]);
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setSelectedItem(value);
-  };
+  // const handleChange = (e) => {
+  //   const { value } = e.target;
+  //   setSelectedItem(value);
+  // };
 
-  // Our handle submit for adding the item to our project --add addItemToProject to head--
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const project = await addItemToProject(selectedItem, id);
-    setProject(project);
-  };
+  // // Our handle submit for adding the item to our project --add addItemToProject to head--
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const project = await addItemToProject(selectedItem, id);
+  //   setProject(project);
+  // };
 
   return (
     <div className='temp-box'>
