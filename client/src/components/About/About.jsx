@@ -1,17 +1,22 @@
-// import './About.css'
+import './About.css'
 
 function About() {
   return (
-    <div>
-      <h1>About me</h1>
-      <p>Rachel</p>
+    <div className='glass'>
+      <h1>About me:</h1>
+        <p><a href="https://github.com/texasrachel" target="blank">
+          Github
+        </a></p>
+      
+      <p><a href="https://www.linkedin.com/in/texasrachel" target="blank">LinkedIn</a></p>
       <h2>Code credits:</h2>
-      <a href="https://codepen.io/ainalem/pen/xJydpe?editors=1100">
+      <p><a href="https://codepen.io/ainalem/pen/xJydpe?editors=1100">
         Card Hover
-      </a>
+      </a></p>
+      <p>
       <a href="https://codepen.io/kanishkkunal/pen/QWGzBwz?editors=1100">
         Glassmorphism
-      </a>
+      </a></p>
     </div>
   );
 }

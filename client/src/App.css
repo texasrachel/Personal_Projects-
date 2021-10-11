@@ -15,7 +15,7 @@
   margin: 0;
   background-image: linear-gradient(to top right, #7D38FB, #C02EC4, #6094EA);
   background-size: cover;
-
+background-color: #7D38FB;
   background-attachment: fixed;
   font-family: 'Work Sans', sans-serif;
   font-size: 18px;
@@ -104,4 +104,18 @@ input[type="email"] {
   img {
     width: 250px;
   }
+}
+  @media all and (max-width: 400px) {
+    .app { 
+      grid-template-areas: 
+        "header"
+        "content"
+        "nav"
+        "footer";
+      grid-template-rows: 1fr 1fr 1fr 1fr;  
+      grid-template-columns: 1fr;
+    }
+    img {
+      width: 250px;
+    }
 }
