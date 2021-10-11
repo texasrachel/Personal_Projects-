@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import './Items.css'
+import './Items.css'
 import ItemCard from '../../components/ItemCard/ItemCard'
 
 function Items(props) {

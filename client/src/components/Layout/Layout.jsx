@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 import Footer from "../Footer/Footer";
-// import "./Layout.css";
+import "./Layout.css";
 
 const Layout = (props) => {
   return (
     <>
-      <div className="nav">
+      <div className="nav glass">
         {props.currentUser ? (
           <div className="welcome">
             <NavLink to="/">
@@ -36,11 +36,14 @@ const Layout = (props) => {
             <p>
               <NavLink to="/items">Items</NavLink>
             </p>
+            <p>
+              <NavLink to="/about">About</NavLink>
+            </p>
           </div>
         )}
+        <Footer />
       </div>
       <div className="content">{props.children}</div>
-      <Footer />
     </>
   );
 };

@@ -1,7 +1,9 @@
 .nav {
   grid-area: nav;
-  background-color: #648ca6;
   height: 100vh;
+  margin: 10px;
+  padding: 10px;
+  color: white;
 }
 .content {
   grid-area: content;

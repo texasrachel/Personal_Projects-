@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-// import './ItemCreate.css'
+import './ItemCreate.css'
 import Layout from '../../components/Layout/Layout'
 
 function ItemCreate(props) {

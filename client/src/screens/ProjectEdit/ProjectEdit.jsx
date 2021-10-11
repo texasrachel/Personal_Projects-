@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { updateProject } from "../../services/projects";
-// import "./ProjectEdit.css";
+import "./ProjectEdit.css";
 
 function ProjectEdit(props) {
   const [project, setProject] = useState({
@@ -80,74 +80,75 @@ function ProjectEdit(props) {
         <div className="project-form-info">
           <label>
             Name:
+            </label>
             <input
               type="text"
               name="name"
               value={name}
               onChange={handleChange}
             />
-          </label>
 
           <label>
             Image Url:
+            </label>
             <input
               type="text"
               name="img_url"
               value={img_url}
               onChange={handleChange}
             />
-          </label>
 
           <label>
             Description:
+            </label>
             <input
               type="text"
               name="description"
               value={description}
               onChange={handleChange}
             />
-          </label>
 
           <label>
             Category:
+            </label>
             <input
               type="text"
               name="category"
               value={category}
               onChange={handleChange}
             />
-          </label>
 
           <label>
             Instructions Link:
+            </label>
             <input
               type="text"
               name="instructions_link"
               value={instructions_link}
               onChange={handleChange}
             />
-          </label>
 
           <label>
             For:
+            </label>
             <input
               type="text"
               name="made_for"
               value={made_for}
               onChange={handleChange}
             />
-          </label>
 
           <label>
             Notes:
+            </label>
             <input
               type="text"
               name="notes"
               value={notes}
               onChange={handleChange}
             />
-          </label>
         </div>
+        
         <br />
         <button className="glass-button">Submit</button>
         <button

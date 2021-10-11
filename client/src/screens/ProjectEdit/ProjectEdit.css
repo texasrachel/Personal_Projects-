@@ -2,7 +2,7 @@
   height: 90vh;
 }
 .project-form-info {
-  align-items: center;
+  justify-items: stretch;
   margin: auto;
   border-radius: 0.6em;
   background: rgba(255, 255, 255, 0.25);
@@ -13,6 +13,7 @@
   cursor: pointer;
   height: 60vh;
   padding: 12px;
+  text-align: left;
 }
 .project-text-title {
   font-family: 'Archivo-Narrow', sans-serif;

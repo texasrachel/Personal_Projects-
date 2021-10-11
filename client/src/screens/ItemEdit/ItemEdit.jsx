@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
 import Layout from '../../components/Layout/Layout'
 import { updateItem } from '../../services/items';
-// import './ItemEdit.css'
+import './ItemEdit.css'
 
 function ItemEdit(props) {
   const [item, setItem] = useState({
