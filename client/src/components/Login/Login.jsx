@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import "./Login.css";
+import "./Login.css";
 
 function Login(props) {
   const [formData, setFormData] = useState({
@@ -25,9 +25,11 @@ function Login(props) {
         }}
       >
         <div className="page-title">Login</div>
+        <div className='login-info'>
         <div className="login-username">
           <label>
             Username:
+            </label>
             <br />
             <input
               type="text"
@@ -35,12 +37,12 @@ function Login(props) {
               value={formData.username}
               onChange={handleChange}
             />
-          </label>
         </div>
         <br />
         <div className="login-password">
           <label>
             Password:
+            </label>
             <br />
             <input
               type="password"
@@ -48,7 +50,7 @@ function Login(props) {
               value={formData.password}
               onChange={handleChange}
             />
-          </label>
+        </div>
         </div>
         <br />
         <button className="glass-button">Submit</button>

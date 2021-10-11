@@ -23,9 +23,8 @@
   flex: 50%;
   border-radius: 0.6em;
   margin: 1em;
-
   cursor: pointer;
-  height: 60vh;
+  height: 100%;
   padding: 12px;
   text-align: left;
 }
