@@ -1,4 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&family=Satisfy&family=Work+Sans:wght@100&display=swap');
+
 .App {
   text-align: center;
   border: 1px solid green;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, 1fr); 
+  gap: 0px 0px; 
+  grid-area: 2 / 2 / 3 / 5; 
+}
+.content {
+
+  align-items: center;
+  font-family: 'Work Sans', sans-serif;
+  color: black;
+  border: 1px solid grey;
+}
+.sidebar-app {
+  grid-area: 1 / 1 / 4 / 2;
+}
+.footer-app {
+  grid-area:  3 / 2 / 4 / 5;
 }

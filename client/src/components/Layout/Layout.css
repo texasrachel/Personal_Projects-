@@ -1,3 +1,30 @@
-.temp-box {
+.grid-layout {
+  text-align: center;
+  border: 1px solid green;
+  height: 100vh;
+  /* display: grid;
+  grid-template-columns: 15em repeat(3, 1fr); 
+  grid-template-rows: 0.5fr 2.4fr 0.5fr; 
+  gap: 5px 5px; 
+	grid-gap: 1em 1em; */
+}
+.content {
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, 1fr); 
+  gap: 0px 0px; 
+  grid-area: 2 / 2 / 3 / 5; 
   border: 1px solid grey;
+}
+header {
+  grid-area: 1 / 2 / 2 / 5;
+  border: 1px solid red;
+  font-size: small;
+  text-align: right;
+}
+.footer-app {
+  grid-area: 3 / 2 / 4 / 5;
+}
+.footer-center {
+  grid-area: 3 / 3 / 4 / 4; 
 }

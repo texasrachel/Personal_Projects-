@@ -1,34 +1,34 @@
 import { NavLink } from "react-router-dom";
-
+import Sidebar from "../Sidebar/Sidebar";
+import Footer from '../Footer/Footer'
 const Layout = (props) => {
   return (
-    <div className="temp-box">
-      <header>
-        <h1>Layout</h1>
-        {props.currentUser ? (
-          <div>
-            <p>{props.currentUser.username}</p>
-            <button onClick={props.handleLogout}>Logout</button>
-          </div>
-        ) : (
-          <NavLink to="/login">Login/Register</NavLink>
-        )}
+    <div className="grid-layout">
+      <Sidebar />
+        <header className="header">
+          {props.currentUser ? (
+            <div className="welcome">
+              <p>Welcome {props.currentUser.username}</p>
+              <button onClick={props.handleLogout}>Logout</button>
+            </div>
+          ) : (
+            <NavLink to="/login" className="login">
+              Login/Register
+            </NavLink>
+          )}
+        </header>
         <hr />
         {props.currentUser && (
-          <div className="temp-box">
+          <div className="list">
             <p>
-              <NavLink to="/projects">Projects Nav</NavLink>
+              <NavLink to="/projects">Projects</NavLink>
             </p>
             <p>
-              <NavLink to="/items">Items Nav</NavLink>
+              <NavLink to="/items">Items</NavLink>
             </p>
           </div>
         )}
-      </header>
-      <div>
-        <p>Everything above is Header</p>
-        {props.children}
-      </div>
+      <div className="content-props">{props.children}</div>
     </div>
   );
 };

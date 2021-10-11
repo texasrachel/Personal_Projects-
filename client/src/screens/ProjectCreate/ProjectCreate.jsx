@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 
 import './ProjectCreate.css'
 import Layout from '../../components/Layout/Layout'
 
 function ProjectCreate(props) {
+  const history = useHistory();
 
   const [project, setProject] = useState({
     name: "",
@@ -44,7 +46,8 @@ function ProjectCreate(props) {
     <div className='temp-box'>
       <form onSubmit={(e)=> {
       e.preventDefault()
-      createProject(project);
+          createProject(project);
+          history.push('/projects')
     }}>
           <h3>Create Project</h3>
           <p className="project-form-name">

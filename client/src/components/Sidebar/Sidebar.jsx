@@ -1,17 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Sidebar() {
+const Sidebar = () => {
+
 
   return (
-    <div>
+    <div className='sidebar'>
+      <p>Sidebar</p>
       <ul>
         <li>
-          Home
+      <Link exact to="/">
+        Home
+      </Link>
         </li>
         <li>
-          Projects
+      <Link to="/projects">Projects</Link>
         </li>
-    </ul>
+        <li>
+      <Link to="/items">Items</Link>
+        </li>
+        <li>
+      <Link to="/about">About</Link>
+      </li>
+      </ul>
     </div>
   )
 }

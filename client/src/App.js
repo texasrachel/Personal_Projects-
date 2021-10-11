@@ -42,25 +42,26 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Project Shopping Planner</h1>
-      <p>this is the app page</p>
-      <Layout currentUser={currentUser} handleLogout={handleLogout}>
-        <Switch>
-          <Route path='/login'>
-            <Login handleLogin={handleLogin} />
-          </Route>
-          <Route  path='/register'>
-            <Register handleRegister={handleRegister} />
-          </Route>
-          <Route path='/items'>
-            <ItemContainer />
-          </Route>
-          <Route path='/'>
-            <ProjectContainer />
-          </Route>
-        </Switch>
+      <Layout>
+        {/* <h1>Project Shopping Planner</h1>
+        <p>this is the app page</p> */}
+        <Layout currentUser={currentUser} handleLogout={handleLogout} >
+          <Switch>
+            <Route path='/login'>
+              <Login handleLogin={handleLogin} />
+            </Route>
+            <Route path='/register'>
+              <Register handleRegister={handleRegister} />
+            </Route>
+            <Route path='/items'>
+              <ItemContainer />
+            </Route>
+            <Route path='/'>
+              <ProjectContainer />
+            </Route>
+          </Switch>
+        </Layout>
       </Layout>
-      <Footer />
     </div>
   );
 }

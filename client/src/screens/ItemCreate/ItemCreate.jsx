@@ -1,9 +1,12 @@
 import { useState } from 'react'
+// import { createItem } from '../../services/items'
+import { useHistory } from 'react-router-dom'
 
 import './ItemCreate.css'
 import Layout from '../../components/Layout/Layout'
 
 function ItemCreate(props) {
+  const history = useHistory();
   
   const [item, setItem] = useState({
     name: "",
@@ -51,7 +54,8 @@ const {
     <div className='temp-box'>
       <form onSubmit={(e)=> {
       e.preventDefault()
-      createItem(item);
+          createItem(item);
+          history.push('/items')
     }}>
           <h3>Create Item</h3>
           <p className="item-form-name">
@@ -177,7 +181,8 @@ const {
           </p>
 
       <br/>
-      <button>Submit</button>
+          <button>Submit</button>
+          
     </form>
       </div>
       </Layout>
