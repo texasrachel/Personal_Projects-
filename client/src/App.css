@@ -15,10 +15,12 @@
   margin: 0;
   background-image: linear-gradient(to top right, #7D38FB, #C02EC4, #6094EA);
   background-size: cover;
+
+  background-attachment: fixed;
   font-family: 'Work Sans', sans-serif;
   font-size: 18px;
   color: white;
-  min-height: 100vh;
+  height: 100%;
 }
 a:hover, a:visited, a:link, a:active {
   text-decoration: none;
@@ -89,8 +91,8 @@ input[type="email"] {
 }
 
 /* Stack the layout on small devices/viewports. */
-@media all and (max-width: 700px) {
-  body { 
+@media all and (max-width: 800px) {
+  .app { 
     grid-template-areas: 
       "header"
       "content"
