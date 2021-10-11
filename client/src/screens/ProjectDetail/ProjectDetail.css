@@ -1,3 +1,28 @@
-.tempbox {
+.project-detail {
   border: 1px solid grey;
+}
+.project-info {
+  display: flex;
+  flex-direction: row;
+}
+.project-title {
+  width: 100%;
+}
+.project-image {
+  float: left;
+  flex: 50%;
+}
+.project-image img {
+  width: 100%;
+}
+.project-text {
+  flex: 50%;
+}
+
+@media screen and (max-width: 400px) {
+  .project-info {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }

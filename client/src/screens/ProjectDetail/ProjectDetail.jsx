@@ -6,7 +6,6 @@ import {
   addItemToProject,
 } from "../../services/projects";
 import "./ProjectDetail.css";
-import Layout from "../../components/Layout/Layout";
 
 function ProjectDetail(props) {
   const [project, setProject] = useState(null);
@@ -40,20 +39,31 @@ function ProjectDetail(props) {
   };
 
   return (
-    <div className="temp-box">
-      <Layout>
-        <h2>ProjectDetail</h2>
+    <div className="project-detail">
         <div>
           {project && (
-            <div>
-              <h3>{project.name}</h3>
+          <div className="project-list">
+            
+            <div className="project-title">
+              <h2>{project.name}</h2>
+            </div>
+
+            <div className='project-info'>
+            
+            <div className="project-image">
               <img src={project.img_url} alt={project.name} />
+            </div>
+            
+            <div className="project-text">
+              <div>
               <p>{project.description}</p>
               <p>{project.category}</p>
               <p>{project.instructions_link}</p>
               <p>{project.made_for}</p>
               <p>{project.notes}</p>
-
+              </div>
+              
+              <div>
               <form onSubmit={handleSubmit}>
                 <select onChange={handleChange} defaultValue="default">
                   <option disabled value="default">
@@ -65,7 +75,7 @@ function ProjectDetail(props) {
                 </select>
                 <button type="submit">Submit Item</button>
               </form>
-<br />
+              <br />
               <Link to={`/projects/${project.id}/edit`}>
                 <button>Edit</button>
               </Link>
@@ -76,11 +86,13 @@ function ProjectDetail(props) {
                 }}
               >
                 Delete
-              </button>
+                </button>
+              </div>
+              </div>
+            </div>
             </div>
           )}
         </div>
-      </Layout>
     </div>
   );
 }

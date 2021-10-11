@@ -26,7 +26,6 @@ const Layout = (props) => {
             </p>
           </div>
         )}
-        <p>Everything above is Header</p>
         </div>
       <div className='content'>
         {props.children}
