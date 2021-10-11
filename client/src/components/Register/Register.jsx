@@ -18,48 +18,48 @@ function Register(props) {
   };
 
   return (
-    <div className='register-input'>
+    <div className='glass'>
     <form onSubmit={(e)=> {
       e.preventDefault();
       props.handleRegister(formData);
     }}>
-        <div className='register-title'>Register</div>
+        <div className='page-title'>Register</div>
 
-        <div className='register-email'>
+        <div className='register-info'>
       <label>
-        Password:
+        Email:
+        </label>
         <input
           type='email'
           name='email'
           value={formData.email}
           onChange={handleChange}
         />
-      </label>
         </div>
         
         <div className='register-username'>
       <label>
         Username:
+        </label>
         <input
           type='text'
           name='username'
           value={formData.username}
           onChange={handleChange}
         />
-      </label>
         </div>
         
         <br />
         <div className='register-password'>
       <label>
         Password:
+        </label>
         <input
           type='password'
           name='password'
           value={formData.password}
           onChange={handleChange}
         />
-      </label>
         </div>
         
       <br />
