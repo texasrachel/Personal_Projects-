@@ -34,14 +34,14 @@ function ProjectCreate(props) {
       ...prevState,
       [name]: value
     }))
-    // history.push("/projects");
   }
-
+  
   return (
     <div className='project-create-container '>
       <form onSubmit={(e)=> {
-      e.preventDefault()
-      createProject(project);
+        e.preventDefault()
+        createProject(project);
+        history.push("/projects");
     }}>
         <div className='page-title'>Create New Project</div>
         

@@ -9,7 +9,6 @@
   grid-area: content;
   padding: 30px 10px 10px 10px;
   height: 100%;
-  background-color: #7D38FB;
 }
 .welcome {
   font-family: "Satisfy", cursive;
@@ -33,5 +32,12 @@
 @media screen and (max-width: 800px) {
   .nav {
     float:none;
+  }
+  .welcome {
+    font-size: 20px;
+  }
+  .glass-button {
+    padding: 5px;
+    font-size: 10px;
   }
 }

@@ -1,5 +1,5 @@
 .item-form-container  {
-  height: 90vh;
+  height: 80vh;
 }
 .item-form-info {
   justify-items: stretch;
@@ -33,8 +33,20 @@ select {
   font-size: 16px;
   border-radius: 10px;
 }
-
-@media screen and (max-width: 700px) {
+label{
+  display: block;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+}
+input[type="text"], 
+input[type="password"] {
+  padding: 10px;
+  margin: 5px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 800px) {
   .item-info {
     width: 100%;
     flex-wrap: wrap;
