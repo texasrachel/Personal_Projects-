@@ -5,13 +5,18 @@ export const getAllProjects = async () => {
   return resp.data;
 };
 
-export const getOneProject = async (id) => {
+export const getProject = async (id) => {
   const resp = await api.get(`/projects/${id}`);
   return resp.data;
 };
 
-export const postProject = async (projectData) => {
+export const createProject = async (projectData) => {
   const resp = await api.post('/projects', { project: projectData });
+  return resp.data;
+};
+
+export const updateProject = async (id, projectData) => {
+  const resp = await api.put(`/projects/${id}`, { project: projectData });
   return resp.data;
 };
 
@@ -20,12 +25,7 @@ export const deleteProject = async (id) => {
   return resp;
 };
 
-export const putProject = async (id, projectData) => {
-  const resp = await api.put(`/projects/${id}`, { project: projectData });
-  return resp.data;
-};
-
-export const addItemToProject = async (itemId, id) => {
-  const resp = await api.put(`/items/${itemId}/projects/${id}`);
+export const addItemToProject = async (id, itemId) => {
+  const resp = await api.put(`/projects/${id}/items/${itemId}/`);
   return resp.data;
 };

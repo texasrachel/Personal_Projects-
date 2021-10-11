@@ -1,0 +1,31 @@
+.nav {
+  grid-area: nav;
+  height: 100vh;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+}
+.content {
+  grid-area: content;
+  padding: 30px 10px 10px 10px;
+  height: 100%;
+}
+.welcome {
+  font-family: "Satisfy", cursive;
+  font-size: 30px;
+}
+
+.layout-nav {
+  padding: 10px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+}
+.layout-nav ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 10px;
+  padding: 0;
+}
+.layout-nav ul {
+  text-decoration: underline;
+}

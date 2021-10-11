@@ -1,4 +1,5 @@
 import { useState } from 'react'
+// import './Register.css'
 
 function Register(props) {
   
@@ -17,33 +18,52 @@ function Register(props) {
   };
 
   return (
-    <div>
+    <div className='glass'>
     <form onSubmit={(e)=> {
       e.preventDefault();
       props.handleRegister(formData);
     }}>
-      <h3>Register</h3>
+        <div className='page-title'>Register</div>
+
+        <div className='register-info'>
+      <label>
+        Email:
+        </label>
+        <input
+          type='email'
+          name='email'
+          value={formData.email}
+          onChange={handleChange}
+        />
+        </div>
+        
+        <div className='register-username'>
       <label>
         Username:
+        </label>
         <input
           type='text'
           name='username'
           value={formData.username}
           onChange={handleChange}
         />
-      </label>
-      <br />
+        </div>
+        
+        <br />
+        <div className='register-password'>
       <label>
         Password:
+        </label>
         <input
           type='password'
           name='password'
           value={formData.password}
           onChange={handleChange}
         />
-      </label>
+        </div>
+        
       <br />
-      <button>Submit</button>
+      <button className='glass-button'>Submit</button>
     </form>
     </div>
   )

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Register.css'
+// import './Register.css'
 
 export default function Register(props) {
   const [formData, setFormData] = useState({
@@ -23,7 +23,8 @@ export default function Register(props) {
         props.handleRegister(formData);
       }}
     >
-      <h3>Register</h3>
+      <div className='register-title'>Register</div>
+      <div className='register-'>
       <label>
         Username:
         <input

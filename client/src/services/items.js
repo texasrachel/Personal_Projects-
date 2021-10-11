@@ -11,16 +11,16 @@ export const getItem = async id => {
 };
 
 export const createItem = async (itemData) => {
-  const resp = await api.post('/items', {item: itemData });
+  const resp = await api.post('/items', { item: itemData });
   return resp.data;
 };
 
 export const updateItem = async (id, itemData) => {
-  const resp = await api.put(`/item/${id}`, { item: itemData });
+  const resp = await api.put(`/items/${id}`, { item: itemData });
   return resp.data;
 };
 
-export const deleteItems = async id => {
+export const deleteItem = async id => {
   const resp = await api.delete(`/items/${id}`);
   return resp.data;
 };

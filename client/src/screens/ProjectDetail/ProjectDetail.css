@@ -1,3 +1,64 @@
-.tempbox {
-  border: 1px solid grey;
+.project-detail {
+  height: 90vh;
+}
+.project-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+.project-image {
+  float: left;
+  flex: 50%;
+  border-radius: 0.6em;
+  margin: 1em;
+  cursor: pointer;
+  height: 100%;
+  padding: 12px;
+}
+.project-image img {
+  width: 500px;
+}
+.project-text {
+  flex: 50%;
+  border-radius: 0.6em;
+  margin: 1em;
+  cursor: pointer;
+  height: 100%;
+  padding: 12px;
+  text-align: left;
+}
+.project-text-title {
+  font-family: 'Archivo-Narrow', sans-serif;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.project-text-info {
+  font-family: 'Work Sans', sans-serif;
+  padding: 0 0 5px 0;
+}
+.project-items {
+  justify-content: stretch;
+}
+.buttons {
+  margin: auto;
+  text-align: center;
+}
+.button-space {
+  margin: 5px;
+}
+select {
+  padding: 10px;
+  margin: 5px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 760px) {
+  .project-info {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }

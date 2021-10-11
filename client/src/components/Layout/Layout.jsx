@@ -1,28 +1,50 @@
 import { NavLink } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import "./Layout.css";
 
 const Layout = (props) => {
   return (
-    <div>
-      <header>
-        <h1>Layout</h1>
+    <>
+      <div className="nav glass">
         {props.currentUser ? (
-          <div>
-            <p>{props.currentUser.username}</p>
-            <button onClick={props.handleLogout}>Logout</button>
+          <div className="welcome">
+            <NavLink to="/">
+            <p>Welcome {props.currentUser.username}</p></NavLink>
+            <button
+              className='glass-button'
+              onClick={props.handleLogout}>Logout</button>
           </div>
         ) : (
-          <NavLink to="/login">Login/Register</NavLink>
+          <div className="layout-nav">
+            <ul>
+              <NavLink to="/login">
+                <li>Login</li>
+              </NavLink>
+              <br />
+              <NavLink to="/register">
+                <li>Register</li>
+              </NavLink>
+            </ul>
+          </div>
         )}
         <hr />
         {props.currentUser && (
-          <div>
-            <p><NavLink to="/projects">Projects Nav</NavLink></p>
-            <p><NavLink to="/items">Items Nav</NavLink></p>
+          <div className="pages">
+            <p>
+              <NavLink to="/projects">Projects</NavLink>
+            </p>
+            <p>
+              <NavLink to="/items">Items</NavLink>
+            </p>
+            <p>
+              <NavLink to="/about">About</NavLink>
+            </p>
           </div>
         )}
-      </header>
-      <div>{props.children}</div>
-    </div>
+        <Footer />
+      </div>
+      <div className="content">{props.children}</div>
+    </>
   );
 };
 

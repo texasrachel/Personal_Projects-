@@ -1,3 +1,43 @@
-.tempbox {
-  border: 1px solid grey;
+.item-form-container  {
+  height: 90vh;
+}
+.item-form-info {
+  justify-items: stretch;
+  margin: auto;
+  border-radius: 0.6em;
+  cursor: pointer;
+  height: 100%;
+  padding: 12px;
+  text-align: left;
+}
+.item-text-title {
+  font-family: 'Archivo-Narrow', sans-serif;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.item-text-info {
+  font-family: 'Work Sans', sans-serif;
+  padding: 0 0 5px 0;
+}
+.item-items {
+  justify-content: stretch;
+}
+.buttons {
+  margin: auto;
+  text-align: center;
+}
+select {
+  padding: 10px;
+  margin: 5px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .item-info {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }

@@ -1,66 +1,123 @@
 import { useState } from 'react'
 
 import './ProjectCreate.css'
-import Layout from '../../components/Layout/Layout'
 
 function ProjectCreate(props) {
-  const [formData, setFormData] = useState({
-    name: '',
-    description: '',
-    category: ''
-  })
 
-  const { name, description, category } = formData
+  const [project, setProject] = useState({
+    name: "",
+    img_url: "",
+    description: "",
+    category: "",
+    instructions_link: "",
+    made_for: "",
+    notes: "",
+  });
+
+  const {
+    name,
+    img_url,
+    description,
+    category,
+    instructions_link,
+    made_for,
+    notes,
+  } = project;
+
   const { createProject } = props
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData((prevState) => ({
+    setProject((prevState) => ({
       ...prevState,
       [name]: value
     }))
   }
 
   return (
-    <Layout>
-    <div className='tempbox'>
+    <div className='project-create-container '>
       <form onSubmit={(e)=> {
       e.preventDefault()
-      createProject(formData);
+      createProject(project);
     }}>
-      <h3>Create Project</h3>
-      <label>
-        Name:
-        <input
-          type='text'
-          name='name'
-          value={formData.name}
-          onChange={handleChange}
-        />
-          </label>
-          <label>
-        Description:
-        <input
-          type='text'
-          name='name'
-          value={formData.description}
-          onChange={handleChange}
-        />
-          </label>
-          <label>
-          Category:
-        <input
-          type='text'
-          name='category'
-          value={formData.category}
-          onChange={handleChange}
-        />
-      </label>
+        <div className='page-title'>Create New Project</div>
+        
+        <div className="project-text glass">
+            <label>
+              Name:
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleChange}
+              />
+
+            <label>
+              Image Url:
+              </label>
+              <input
+                type="text"
+                name="img_url"
+                value={img_url}
+                onChange={handleChange}
+              />
+
+            <label>
+              Description:
+              </label>
+              <input
+                type="text"
+                name="description"
+                value={description}
+                onChange={handleChange}
+              />
+
+            <label>
+              Category:
+              </label>
+              <input
+                type="text"
+                name="category"
+                value={category}
+                onChange={handleChange}
+              />
+
+            <label>
+              Instructions Link:
+              </label>
+              <input
+                type="text"
+                name="instructions_link"
+                value={instructions_link}
+                onChange={handleChange}
+              />
+
+            <label>
+              For:
+              </label>
+              <input
+                type="text"
+                name="made_for"
+                value={made_for}
+                onChange={handleChange}
+              />
+
+            <label>
+              </label>
+              Notes:
+              <input
+                type="text"
+                name="notes"
+                value={notes}
+                onChange={handleChange}
+              />
+            </div>
+
       <br/>
-      <button>Submit</button>
+      <button className='glass-button'>Submit</button>
     </form>
     </div>
-    </Layout>
   )
 }
 
