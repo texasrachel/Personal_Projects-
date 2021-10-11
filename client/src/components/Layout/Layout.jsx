@@ -1,13 +1,15 @@
 import { NavLink } from "react-router-dom";
+import Footer from '../Footer/Footer'
+import './Layout.css'
 
 const Layout = (props) => {
   return (
-    <div className="temp-box">
-      <header>
-        <h1>Layout</h1>
+    <>
+    <div className="nav">
+        <p>Layout</p>
         {props.currentUser ? (
-          <div>
-            <p>{props.currentUser.username}</p>
+          <div className="welcome">
+            <p>Welcome {props.currentUser.username}</p>
             <button onClick={props.handleLogout}>Logout</button>
           </div>
         ) : (
@@ -15,21 +17,22 @@ const Layout = (props) => {
         )}
         <hr />
         {props.currentUser && (
-          <div className="temp-box">
+          <div className="pages">
             <p>
-              <NavLink to="/projects">Projects Nav</NavLink>
+              <NavLink to="/projects">Projects</NavLink>
             </p>
             <p>
-              <NavLink to="/items">Items Nav</NavLink>
+              <NavLink to="/items">Items</NavLink>
             </p>
           </div>
         )}
-      </header>
-      <div>
         <p>Everything above is Header</p>
+        </div>
+      <div className='content'>
         {props.children}
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

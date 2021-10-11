@@ -2,6 +2,10 @@ function About() {
   return (
     <div>
       <h1>About me</h1>
+      <p>Rachel</p>
+      <h2>Code credits:</h2>
+      <a href="https://codepen.io/ainalem/pen/xJydpe?editors=1100">Card Hover</a>
+
     </div>
   )
 }

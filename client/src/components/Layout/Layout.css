@@ -1,3 +1,16 @@
-.temp-box {
+.nav{
   border: 1px solid grey;
+  grid-area: nav;
+  background-color: #648ca6;
+}
+.content {
+  border: 1px dotted blue;
+  grid-area: content;
+
+}
+.welcome {
+  border: 1px solid pink;
+}
+.pages {
+  border: 1px solid gold;
 }

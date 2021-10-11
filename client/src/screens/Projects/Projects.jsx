@@ -9,7 +9,7 @@ function Projects(props) {
   console.log(projects);
 
   return (
-    <div className="temp-box">
+    <div className="project-page">
       <h1> -Projects- </h1>
       <div className="project-map">
         {projects.map((project) => (

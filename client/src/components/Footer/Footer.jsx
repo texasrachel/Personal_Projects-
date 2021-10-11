@@ -1,10 +1,10 @@
-
+import './Footer.css'
 const Footer = () => {
   return (
     <footer>
       <div> 
-        <p><a href='github'>Github</a></p>
-        <a href='linkedin'>LinkedIn</a>
+      <a className='git-icons' href="https://github.com/texasrachel" target="blank"> <img className="github-img" src="https://github.com/tiffanybibby/encapsule/blob/main/assets/github-logo.png?raw=true" alt='github icon' /> </a>
+      <a className='name' href="https://www.linkedin.com/in/texasrachel" target="blank">Rachel Ginnett</a>
       </div>
     </footer>
   )

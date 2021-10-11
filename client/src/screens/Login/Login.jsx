@@ -6,6 +6,8 @@ export default function Login(props) {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
+    isError: false,
+    errorMsg: '',
   });
 
   const handleChange = (e) => {
@@ -14,6 +16,37 @@ export default function Login(props) {
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const onSignIn = async (e) => {
+    e.preventDefault();
+    const { setUser } = props;
+    try {
+      const user = await signIn(form);
+      setUser(user);
+      history.push("/items");
+    } catch (error) {
+      console.error(error);
+      setForm({
+        isError: true,
+        errorMsg: "Invalid Credentials. Please try again",
+        email: "",
+        password: "",
+      });
+    }
+  };
+
+  const renderError = () => {
+    if (form.isError) {
+      return (
+        <>
+          <p className="sign-in-error">{form.errorMsg}</p>
+          <button className="sign-in-button" type="submit">Sign In</button>
+        </>
+      );
+    } else {
+      return <button className="sign-in-button" type="submit">Sign In</button>;
+    }
   };
 
   return (

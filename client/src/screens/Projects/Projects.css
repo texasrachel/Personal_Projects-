@@ -1,17 +1,18 @@
-.temp-box {
+* {
+  box-sizing: border-box;
+}
+.project-map {
   border: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.div:nth-of-type(1) {
+  color: lightgrey;
+  width: 420px;
 }
 img {
   width: 200px;
-}
-
-.card {
-  background: white;
-  width: 24em;
-  border-radius: 0.6em;
-  margin: 1em;
-  overflow: hidden;
-  box-shadow: 3px;
-  transition: all ease 200ms;
-  border: 1px green solid;
 }

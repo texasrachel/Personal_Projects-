@@ -6,7 +6,7 @@ import { loginUser, registerUser, verifyUser, removeToken } from './services/aut
 import Layout from './components/Layout/Layout';
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
-import Footer from './components/Footer/Footer'
+
 import ItemContainer from './containers/ItemsContainer/ItemContainer'
 import ProjectContainer from './containers/ProjectContainer/ProjectContainer';
 
@@ -42,8 +42,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Project Shopping Planner</h1>
-      <p>this is the app page</p>
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
           <Route path='/login'>
@@ -60,7 +58,7 @@ const App = () => {
           </Route>
         </Switch>
       </Layout>
-      <Footer />
+ 
     </div>
   );
 }
