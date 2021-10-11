@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&family=Satisfy&family=Archivo+Narrow&family=Work+Sans&display=swap');
+
 .App {
   text-align: center;
   border: 1px solid green;
@@ -16,7 +18,7 @@
 a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }
-header, footer, content, nav, div {
+header, footer, content, nav {
   padding: 0.3em;
   }
 #pageHeader {

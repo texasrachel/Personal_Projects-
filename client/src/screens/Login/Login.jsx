@@ -18,43 +18,14 @@ export default function Login(props) {
     }));
   };
 
-  const onSignIn = async (e) => {
-    e.preventDefault();
-    const { setUser } = props;
-    try {
-      const user = await signIn(form);
-      setUser(user);
-      history.push("/items");
-    } catch (error) {
-      console.error(error);
-      setForm({
-        isError: true,
-        errorMsg: "Invalid Credentials. Please try again",
-        email: "",
-        password: "",
-      });
-    }
-  };
-
-  const renderError = () => {
-    if (form.isError) {
-      return (
-        <>
-          <p className="sign-in-error">{form.errorMsg}</p>
-          <button className="sign-in-button" type="submit">Sign In</button>
-        </>
-      );
-    } else {
-      return <button className="sign-in-button" type="submit">Sign In</button>;
-    }
-  };
-
   return (
+    <div className='login-input'>
     <form onSubmit={(e)=> {
       e.preventDefault();
       props.handleLogin(formData);
     }}>
-      <h3>Login</h3>
+      <div className='login-label'>Login</div>
+      <div className='login-username'>
       <label>
         Username:
         <input
@@ -64,6 +35,8 @@ export default function Login(props) {
           onChange={handleChange}
         />
       </label>
+      </div>
+      <div className='login-password'>
       <br />
       <label>
         Password:
@@ -74,9 +47,11 @@ export default function Login(props) {
           onChange={handleChange}
         />
       </label>
+      </div>
       <br />
-      <Link to='/register'>Register</Link>
       <button>Submit</button>
-    </form>
+      </form>
+      <Link to='/register'>Register</Link>
+      </div>
   );
 }

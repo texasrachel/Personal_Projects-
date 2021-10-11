@@ -27,72 +27,78 @@ function ProjectDetail(props) {
     setSelectedItem(value);
   };
 
-  // Our handle submit for adding the item to our project --add addItemToProject to head--
+  // Our handle submit for adding the item to our project 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(selectedItem);
     console.log(id);
     const project = await addItemToProject(id, selectedItem);
     setProject(project);
-    //add history.push 
+    history.push("/projects/:id")
     //{project.item display map}
   };
 
   return (
     <div className="project-detail">
-        <div>
-          {project && (
+      <div>
+        {project && (
           <div className="project-list">
-            
             <div className="project-title">
-              <h2>{project.name}</h2>
+              <p>{project.name}</p>
             </div>
 
-            <div className='project-info'>
-            
-            <div className="project-image">
-              <img src={project.img_url} alt={project.name} />
-            </div>
-            
-            <div className="project-text">
-              <div>
-              <p>{project.description}</p>
-              <p>{project.category}</p>
-              <p>{project.instructions_link}</p>
-              <p>{project.made_for}</p>
-              <p>{project.notes}</p>
+            <div className="project-info">
+              <div className="project-image">
+                <img src={project.img_url} alt={project.name} />
               </div>
-              
-              <div>
-              <form onSubmit={handleSubmit}>
-                <select onChange={handleChange} defaultValue="default">
-                  <option disabled value="default">
-                    -- Select an Item --
-                  </option>
-                  {items.map((item) => {
-                    return <option value={item.id}>{item.name}</option>;
-                  })}
-                </select>
-                <button type="submit">Submit Item</button>
-              </form>
-              <br />
-              <Link to={`/projects/${project.id}/edit`}>
-                <button>Edit</button>
-              </Link>
-              <button
-                onClick={() => {
-                  deleteProject(project.id);
-                  history.push("/projects");
-                }}
-              >
-                Delete
-                </button>
-              </div>
+
+              <div className="project-text">
+                <div>
+                  <div className="project-text-title">Description: </div>
+                  <div className="project-text-info">{project.description}</div>
+                  <div className="project-text-title">Category: </div>
+                  <div className="project-text-info">{project.category}</div>
+                  <div className="project-text-title"> Instructions: </div>
+                  <div className="project-text-info">
+                    {project.instructions_link}
+                  </div>
+                  <div className="project-text-title">For: </div>
+                  <div className="project-text-info">{project.made_for}</div>
+                  <div className="project-text-title">Notes: </div>
+                  <div className="project-text-info">{project.notes}</div>
+                </div>
+
+                <div className="project-buttons">
+                  <div className="project-text-title">Items: </div>
+                  <form onSubmit={handleSubmit}>
+                    <select onChange={handleChange} defaultValue="default">
+                      <option disabled value="default">
+                        -- Select an Item --
+                      </option>
+                      {items.map((item) => {
+                        return <option value={item.id}>{item.name}</option>;
+                      })}
+                    </select>
+                    <button type="submit">Add Item</button>
+                  </form>
+                  <br />
+                  <Link to={`/projects/${project.id}/edit`}>
+                    <button>Edit Project</button>
+                  </Link>
+                  <button
+                    onClick={() => {
+                      deleteProject(project.id);
+                      history.push("/projects");
+                    }}
+                  >
+                    Delete Project
+                  </button>
+                </div>
               </div>
             </div>
-            </div>
-          )}
-        </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
