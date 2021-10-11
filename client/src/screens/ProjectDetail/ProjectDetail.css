@@ -13,18 +13,18 @@
   border-radius: 0.6em;
   margin: 1em;
   cursor: pointer;
-  height: 60vh;
+  height: 100%;
   padding: 12px;
 }
 .project-image img {
-  height: 100%;  
+  width: 500px;
 }
 .project-text {
   flex: 50%;
   border-radius: 0.6em;
   margin: 1em;
   cursor: pointer;
-  height: 60vh;
+  height: 100%;
   padding: 12px;
   text-align: left;
 }

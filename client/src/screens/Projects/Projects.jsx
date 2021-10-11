@@ -19,7 +19,7 @@ function Projects(props) {
                 name={project.name}
                 img_url={project.img_url}
                 description={project.description}
-              />
+              /> 
             </Link>
           </React.Fragment>
         ))}

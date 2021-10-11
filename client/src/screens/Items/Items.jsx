@@ -24,9 +24,11 @@ function Items(props) {
         ))}
       </div>
       <div className='item-new'>
-      <div className='item-text'>
+      <div className='items-text'>
         <Link to="/projects/new">
-          New Project</Link>
+            New Project</Link>
+        </div>
+        <div className='items-text'>
       <Link to="/items/new">New Item</Link>
         </div>
         </div>

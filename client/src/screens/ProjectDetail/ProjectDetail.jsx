@@ -84,7 +84,7 @@ function ProjectDetail(props) {
                   <br />
                   <div className="buttons">
                     <Link to={`/projects/${project.id}/edit`}>
-                      <button className="glass-button">Edit Project</button>
+                      <button className="glass-button button-space">Edit Project</button>
                     </Link>
                     <button
                       className="glass-button"

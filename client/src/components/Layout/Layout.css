@@ -8,6 +8,7 @@
 .content {
   grid-area: content;
   padding: 30px 10px 10px 10px;
+  height: 100%;
 }
 .welcome {
   font-family: "Satisfy", cursive;

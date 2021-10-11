@@ -13,11 +13,11 @@
   border-radius: 0.6em;
   margin: 1em;
   cursor: pointer;
-  height: 60vh;
+  height: 100%;
   padding: 12px;
 }
 .item-image img {
-  height: 100%;  
+  width: 500px;
 }
 .item-text {
   flex: 50%;
@@ -45,6 +45,9 @@
   margin: auto;
   padding: 10px;
   text-align: center;
+}
+.button-space {
+  margin: 5px;
 }
 select {
   padding: 10px;
