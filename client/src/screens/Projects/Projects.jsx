@@ -24,8 +24,8 @@ function Projects(props) {
           </React.Fragment>
         ))}
       </div>
-      <div className='new'>
-      <div className='text'>
+      <div className='projects-new'>
+      <div className='projects-text'>
         <Link to="/projects/new">New Project</Link>
       {/* </div>
       <div className='text'> */}

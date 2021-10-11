@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import "./Layout.css";
 
@@ -28,7 +28,7 @@ const Layout = (props) => {
         {props.currentUser && (
           <div className="pages">
             <p>
-              <NavLink to="/projects">Projects</NavLink>
+              <Link to="/projects">Projects</Link>
             </p>
             <p>
               <NavLink to="/items">Items</NavLink>

@@ -44,7 +44,7 @@ function ProjectDetail(props) {
         {project && (
           <div className="project-list">
             <div className="page-title">
-              <p>{project.name}</p>
+              {project.name}
             </div>
 
             <div className="project-info">

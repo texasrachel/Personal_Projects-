@@ -1,53 +1,39 @@
 .footer {
   font-size: 12px;
-  box-shadow: 0px 0px 3px 2px #6AA6A3;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 20px 80px;
-  margin-top: 40px;
-  width: 100vw;
+  padding: 20px;
+  margin: auto;
+  width: 100%;
+  color: grey;
 }
 .git-icons {
-  display: flex;
-  justify-content: center;
   margin: auto
 }
 .github-img {
   width: 30px;
 }
 .github-img:hover { 
-  transform: scale(1.09);
-  opacity: .8;
+  transform: scale(1.1);
 }
-
 .name {
-font-size: 12px;
-text-align: center;
-font-family: 'Catamaran', sans-serif;
-font-weight: 100;
-text-decoration: none;
-color: black;
-}
-
-.name:hover {
   text-decoration: underline;
-  text-decoration-color: #6AA6A3;
-  color: black;
+  margin: auto;
+  padding: 5px;
 }
-
-
+.name:hover, :visited, :link, :active {
+  text-decoration: underline;
+  margin: auto;
+  padding: 5px 5px 5px 5px;
+}
 @media (max-width: 500px) {
   .footer {
-    width: 100vw;
+    width: 100%;
     padding: 20px 10px;
     font-size: 10px;
   }
   .github-img {
     width: 20px;
   }
-  .name {
-    font-size: 10px;
-    }
 }

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 import './ProjectCreate.css'
-import Layout from '../../components/Layout/Layout'
 
 function ProjectCreate(props) {
 
@@ -13,8 +12,6 @@ function ProjectCreate(props) {
     instructions_link: "",
     made_for: "",
     notes: "",
-    // user_id: "",
-    // item_id: "",
   });
 
   const {
@@ -25,8 +22,6 @@ function ProjectCreate(props) {
     instructions_link,
     made_for,
     notes,
-    // user_id,
-    // item_id,
   } = project;
 
   const { createProject } = props
@@ -40,14 +35,13 @@ function ProjectCreate(props) {
   }
 
   return (
-    <Layout>
-    <div className='temp-box'>
+    <div className='project-create-container '>
       <form onSubmit={(e)=> {
       e.preventDefault()
       createProject(project);
     }}>
-          <h3>Create Project</h3>
-          <p className="project-form-name">
+        <div className='page-title'>Create New Project</div>
+        
             <label>
               Name:
               <input
@@ -57,8 +51,7 @@ function ProjectCreate(props) {
                 onChange={handleChange}
               />
             </label>
-          </p>
-          <p className="project-form-image">
+
             <label>
               Image Url:
               <input
@@ -68,8 +61,7 @@ function ProjectCreate(props) {
                 onChange={handleChange}
               />
             </label>
-          </p>
-          <p className="project-form-description">
+
             <label>
               Description:
               <input
@@ -79,8 +71,7 @@ function ProjectCreate(props) {
                 onChange={handleChange}
               />
             </label>
-          </p>
-          <p className="project-form-category">
+
             <label>
               Category:
               <input
@@ -90,8 +81,7 @@ function ProjectCreate(props) {
                 onChange={handleChange}
               />
             </label>
-          </p>
-          <p className="project-form-instructions-link">
+
             <label>
               Instructions Link:
               <input
@@ -101,8 +91,7 @@ function ProjectCreate(props) {
                 onChange={handleChange}
               />
             </label>
-          </p>
-          <p className="project-form-made-for">
+
             <label>
               For:
               <input
@@ -112,8 +101,7 @@ function ProjectCreate(props) {
                 onChange={handleChange}
               />
             </label>
-          </p>
-          <p className="project-form-notes">
+
             <label>
               Notes:
               <input
@@ -123,12 +111,11 @@ function ProjectCreate(props) {
                 onChange={handleChange}
               />
             </label>
-          </p>
+
       <br/>
-      <button>Submit</button>
+      <button className='glass-button'>Submit</button>
     </form>
     </div>
-    </Layout>
   )
 }
 

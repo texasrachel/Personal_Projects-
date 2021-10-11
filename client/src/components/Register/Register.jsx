@@ -34,7 +34,8 @@ function Register(props) {
           onChange={handleChange}
         />
       </label>
-      </div>
+        </div>
+        
         <div className='register-username'>
       <label>
         Username:
@@ -45,7 +46,8 @@ function Register(props) {
           onChange={handleChange}
         />
       </label>
-      </div>
+        </div>
+        
         <br />
         <div className='register-password'>
       <label>
@@ -57,9 +59,10 @@ function Register(props) {
           onChange={handleChange}
         />
       </label>
-      </div>
+        </div>
+        
       <br />
-      <button>Submit</button>
+      <button className='glass-button'>Submit</button>
     </form>
     </div>
   )

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
-import Layout from "../../components/Layout/Layout";
 import { updateProject } from "../../services/projects";
 import "./ProjectEdit.css";
 
@@ -26,7 +25,7 @@ function ProjectEdit(props) {
     made_for,
     notes,
     // user_id,
-    item_id,
+    // item_id,
   } = project;
   // const { updateProject } = props;
   // console.log(props.projects);
@@ -36,8 +35,8 @@ function ProjectEdit(props) {
 
   useEffect(() => {
     const fillProject = () => {
-      const oneProject = props.projects.find((project) =>
-        project.id === Number(id)
+      const oneProject = props.projects.find(
+        (project) => project.id === Number(id)
       );
       setProject({
         name: oneProject.name,
@@ -74,96 +73,91 @@ function ProjectEdit(props) {
   }
 
   return (
-    <Layout>
-      <div className="project-form-container">
-        <form onSubmit={handleSubmit}>
-          <h3>Edit Project</h3>
-          <p className="project-form-name">
-            <label>
-              Name:
-              <input
-                type="text"
-                name="name"
-                value={name}
-                onChange={handleChange}
-              />
-            </label>
-          </p>
-          <p className="project-form-image">
-            <label>
-              Image Url:
-              <input
-                type="text"
-                name="img_url"
-                value={img_url}
-                onChange={handleChange}
-              />
-            </label>
-          </p>
-          <p className="project-form-description">
-            <label>
-              Description:
-              <input
-                type="text"
-                name="description"
-                value={description}
-                onChange={handleChange}
-              />
-            </label>
-          </p>
-          <p className="project-form-category">
-            <label>
-              Category:
-              <input
-                type="text"
-                name="category"
-                value={category}
-                onChange={handleChange}
-              />
-            </label>
-          </p>
-          <p className="project-form-instructions-link">
-            <label>
-              Instructions Link:
-              <input
-                type="text"
-                name="instructions_link"
-                value={instructions_link}
-                onChange={handleChange}
-              />
-            </label>
-          </p>
-          <p className="project-form-made-for">
-            <label>
-              For:
-              <input
-                type="text"
-                name="made_for"
-                value={made_for}
-                onChange={handleChange}
-              />
-            </label>
-          </p>
-          <p className="project-form-notes">
-            <label>
-              Notes:
-              <input
-                type="text"
-                name="notes"
-                value={notes}
-                onChange={handleChange}
-              />
-            </label>
-          </p>
+    <div className="project-form-container glass">
+      <form onSubmit={handleSubmit}>
+        <div className="page-title">Edit {project.name}</div>
 
-          <br />
-          <button>Submit</button>
-          <button onClick={() => props.handleProjectDelete(project.id)}>
-            Delete
-          </button>
-        </form>
-      </div>
-    </Layout>
+        <div className="project-form-info">
+          <label>
+            Name:
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            Image Url:
+            <input
+              type="text"
+              name="img_url"
+              value={img_url}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            Description:
+            <input
+              type="text"
+              name="description"
+              value={description}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            Category:
+            <input
+              type="text"
+              name="category"
+              value={category}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            Instructions Link:
+            <input
+              type="text"
+              name="instructions_link"
+              value={instructions_link}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            For:
+            <input
+              type="text"
+              name="made_for"
+              value={made_for}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            Notes:
+            <input
+              type="text"
+              name="notes"
+              value={notes}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <br />
+        <button className="glass-button">Submit</button>
+        <button
+          className="glass-button"
+          onClick={() => props.handleProjectDelete(project.id)}
+        >
+          Delete
+        </button>
+      </form>
+    </div>
   );
 }
 

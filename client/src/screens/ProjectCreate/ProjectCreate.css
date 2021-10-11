@@ -1,3 +1,59 @@
-.tempbox {
-  border: 1px solid grey;
+.project-create-container {
+  height: 90vh;
+}
+.project-create-info {
+  align-items: center;
+  margin: auto;
+  border-radius: 0.6em;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  height: 60vh;
+  padding: 12px;
+}
+.project-text-title {
+  font-family: 'Archivo-Narrow', sans-serif;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.project-text-info {
+  font-family: 'Work Sans', sans-serif;
+  padding: 0 0 5px 0;
+}
+.project-items {
+  justify-content: stretch;
+}
+.buttons {
+  margin: auto;
+  text-align: center;
+}
+select {
+  padding: 10px;
+  margin: 5px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  border-radius: 10px;
+}
+label{
+  display: block;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+}
+input[type="text"], 
+input[type="password"] {
+  padding: 10px;
+  margin: 5px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 400px) {
+  .project-info {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }

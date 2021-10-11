@@ -10,8 +10,6 @@
   align-items: center;
 }
 .div:nth-of-type(1) {
-  color: lightgrey;
-  background-color: royalblue;
   width: 420px;
   flex-basis: 100%;
   flex: 2;
@@ -19,14 +17,14 @@
 .project-map img {
   width: 200px;
 }
-.new {
+.projects-new {
   display: block;
 }
-.text {
+.projects-text {
   padding: 50px 10px 10px 10px;
   text-decoration: underline;
 }
-.text:hover, :visited, :link, :active {
+.projects-text:hover, :visited, :link, :active {
   padding: 50px 10px 10px 10px;
   border-radius: 10px;
   color: white;
