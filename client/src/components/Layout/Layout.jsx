@@ -6,7 +6,6 @@ const Layout = (props) => {
   return (
     <>
       <div className="nav">
-        <p>Layout</p>
         {props.currentUser ? (
           <div className="welcome">
             <p>Welcome {props.currentUser.username}</p>
@@ -14,8 +13,15 @@ const Layout = (props) => {
           </div>
         ) : (
           <div className="layout-nav">
-            <NavLink to="/login">Login</NavLink>
-            <NavLink to="/register">Register</NavLink>
+            <ul>
+              <NavLink to="/login">
+                <li>Login</li>
+              </NavLink>
+              <br />
+              <NavLink to="/register">
+                <li>Register</li>
+              </NavLink>
+            </ul>
           </div>
         )}
         <hr />

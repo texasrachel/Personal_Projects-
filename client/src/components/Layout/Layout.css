@@ -1,17 +1,29 @@
-.nav{
-  border: 1px solid grey;
+.nav {
   grid-area: nav;
   background-color: #648ca6;
+  height: 100vh;
 }
 .content {
-  border: 1px dotted blue;
   grid-area: content;
   padding: 30px 10px 10px 10px;
-
 }
 .welcome {
-  border: 1px solid pink;
+  font-family: "Satisfy", cursive;
+  font-size: 30px;
 }
-.pages {
-  border: 1px solid gold;
+/* .pages {
+} */
+.layout-nav {
+  padding: 10px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+}
+.layout-nav ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 10px;
+  padding: 0;
+}
+.layout-nav ul {
+  text-decoration: underline;
 }

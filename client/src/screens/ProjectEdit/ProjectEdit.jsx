@@ -14,7 +14,7 @@ function ProjectEdit(props) {
     made_for: "",
     notes: "",
     // user_id: "",
-    // item_id: "",
+    item_id: "",
   });
   const { id } = useParams();
   const {
@@ -26,7 +26,7 @@ function ProjectEdit(props) {
     made_for,
     notes,
     // user_id,
-    // item_id,
+    item_id,
   } = project;
   // const { updateProject } = props;
   // console.log(props.projects);
@@ -46,8 +46,7 @@ function ProjectEdit(props) {
         category: oneProject.category,
         instructions_link: oneProject.instructions_link,
         made_for: oneProject.made_for,
-        notes: oneProject.v,
-        user_id: oneProject.user_id,
+        notes: oneProject.notes,
         item_id: oneProject.item_id,
       });
     };

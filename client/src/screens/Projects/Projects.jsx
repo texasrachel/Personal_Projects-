@@ -10,7 +10,7 @@ function Projects(props) {
 
   return (
     <div className="project-page">
-      <h1> -Projects- </h1>
+      <div className='page-title'> Projects </div>
       <div className="project-map">
         {projects.map((project) => (
           <React.Fragment key={project.id}>
@@ -24,10 +24,14 @@ function Projects(props) {
           </React.Fragment>
         ))}
       </div>
-      <p>
+      <div className='new'>
+      <div className='text'>
         <Link to="/projects/new">New Project</Link>
-      </p>
-      <Link to="/items/new">New Item</Link>
+      {/* </div>
+      <div className='text'> */}
+        <Link to="/items/new">New Item</Link>
+        </div>
+        </div>
     </div>
   );
 }
