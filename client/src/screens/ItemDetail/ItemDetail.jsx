@@ -28,14 +28,15 @@ function ItemDetail(props) {
       <div>
         {item && (
           <div className="item-list">
-            <div className="page-title">{item.name}</div>
+            <div className="page-title">{
+              item.name}</div>
 
             <div className="item-info">
-              <div className="item-image">
+              <div className="item-image glass">
                 <img src={item.img_url} alt={item.name} />
               </div>
 
-              <div className="item-text">
+              <div className="item-text glass">
                 <div>
                   <div className="item-text-title">Description: </div>
                   <div className="item-text-info">{item.description}</div>
@@ -59,10 +60,10 @@ function ItemDetail(props) {
 
                 <div className="buttons">
                   <Link to={`/items/${item.id}/edit`}>
-                    <button>Edit Item</button>
+                    <button className="glass-button button-space">Edit Item</button>
                   </Link>
                   <button
-                    className="glass-button"
+                    className="glass-button button-space"
                     onClick={() => {
                       deleteItem(item.id);
                       history.push("/items");

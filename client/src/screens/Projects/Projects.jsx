@@ -27,8 +27,8 @@ function Projects(props) {
       <div className='projects-new'>
       <div className='projects-text'>
         <Link to="/projects/new">New Project</Link>
-      {/* </div>
-      <div className='text'> */}
+      </div>
+      <div className='text'>
         <Link to="/items/new">New Item</Link>
         </div>
         </div>

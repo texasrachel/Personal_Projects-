@@ -48,11 +48,11 @@ function ProjectDetail(props) {
             </div>
 
             <div className="project-info">
-              <div className="project-image">
+              <div className="project-image glass">
                 <img src={project.img_url} alt={project.name} />
               </div>
 
-              <div className="project-text">
+              <div className="project-text glass">
                 <div>
                   <div className="project-text-title">Description: </div>
                   <div className="project-text-info">{project.description}</div>

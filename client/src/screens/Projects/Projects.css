@@ -22,9 +22,9 @@
 .projects-text {
   padding: 50px 10px 10px 10px;
   text-decoration: underline;
+  color: white;
+  border-radius: 10px;
 }
 /* .projects-text:hover, :visited, :active {
   padding: 50px 10px 10px 10px;
-  border-radius: 10px;
-  color: white;
 } */
