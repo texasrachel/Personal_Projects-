@@ -1,18 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
-import {
-  getItem,
-  deleteItem
-} from "../../services/items";
+import { getItem, deleteItem } from "../../services/items";
 import "./ItemDetail.css";
-import Layout from "../../components/Layout/Layout";
 
 function ItemDetail(props) {
   const [item, setItem] = useState(null);
   // const [selectedItem, setSelectedItem] = useState("");
   const { id } = useParams();
-  // const { projects } = props;
-  const history = useHistory()
+  const { projects } = props;
+  const history = useHistory();
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -28,30 +24,58 @@ function ItemDetail(props) {
   // };
 
   return (
-    <div className="temp-box">
-      <Layout>
-        <h2>Item Detail</h2>
-        <div>
-          {item && (
-            <div>
-              <h3>{item.name}</h3>
-              <img src={item.img_url} alt={item.name} />
-              <p>{item.description}</p>
-              <Link to={`/items/${item.id}/edit`}>
-                <button>Update</button>
-              </Link>
-              <button
-                onClick={() => {
-                  deleteItem(item.id)
-                  history.push('/items')
-                }}
-              >
-            Delete
-          </button>
+    <div className="item-detail">
+      <div>
+        {item && (
+          <div className="item-list">
+            <div className="page-title">{item.name}</div>
+
+            <div className="item-info">
+              <div className="item-image">
+                <img src={item.img_url} alt={item.name} />
+              </div>
+
+              <div className="item-text">
+                <div>
+                  <div className="item-text-title">Description: </div>
+                  <div className="item-text-info">{item.description}</div>
+                  <div className="item-text-title">Category: </div>
+                  <div className="item-text-info">{item.category}</div>
+                  <div className="item-text-title"> Price: </div>
+                  <div className="item-text-info">{item.price}</div>
+                  <div className="item-text-title">Item Web Link: </div>
+                  <div className="item-text-info">{item.url}</div>
+                  <div className="item-text-title">Store Name: </div>
+                  <div className="item-text-info">{item.store_name}</div>
+                  <div className="item-text-title">Store Address: </div>
+                  <div className="item-text-info">{item.store_address}</div>
+                  <div className="item-text-title">Bought: </div>
+                  <div className="item-text-info">{item.bought}</div>
+                  <div className="item-text-title">Current Place: </div>
+                  <div className="item-text-info">{item.currently_at}</div>
+                  <div className="item-text-title">Notes: </div>
+                  <div className="item-text-info">{item.notes}</div>
+                </div>
+
+                <div className="buttons">
+                  <Link to={`/items/${item.id}/edit`}>
+                    <button>Edit Item</button>
+                  </Link>
+                  <button
+                    className="glass-button"
+                    onClick={() => {
+                      deleteItem(item.id);
+                      history.push("/items");
+                    }}
+                  >
+                    Delete Item
+                  </button>
+                </div>
+              </div>
             </div>
-          )}
-        </div>
-      </Layout>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

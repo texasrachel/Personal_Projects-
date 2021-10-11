@@ -13,9 +13,11 @@ function ProjectEdit(props) {
     made_for: "",
     notes: "",
     // user_id: "",
-    item_id: "",
+    item_id: ""
   });
+
   const { id } = useParams();
+  
   const {
     name,
     img_url,
@@ -89,7 +91,7 @@ function ProjectEdit(props) {
             />
 
           <label>
-            Image Url:
+            Image Link:
             </label>
             <input
               type="text"

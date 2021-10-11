@@ -8,9 +8,9 @@ function Items(props) {
   console.log(items)
 
   return (
-    <div className='temp-box'>
-      <h1> -Items- </h1>
-      <div className="item-card">
+    <div className='item-page"'>
+    <div className='page-title'> Items </div>
+      <div className="item-map">
         {items.map((item) => (
           <React.Fragment key={item.id}>
             <Link to={`/items/${item.id}`}>
@@ -23,10 +23,13 @@ function Items(props) {
           </React.Fragment>
         ))}
       </div>
-      <p>
-        <Link to="/projects/new">New Project</Link>
-      </p>
+      <div className='item-new'>
+      <div className='item-text'>
+        <Link to="/projects/new">
+          New Project</Link>
       <Link to="/items/new">New Item</Link>
+        </div>
+        </div>
     </div>
   )
 }

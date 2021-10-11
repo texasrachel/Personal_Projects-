@@ -14,16 +14,16 @@ function ItemCard(props) {
     currently_at,
     notes,
     // user_id,
-    // project_id,
+    project_id,
   } = props;
 
   return (
-    <div className="item-card">
-      <p>Item Card</p>
-      <h2>{name}</h2>
+    <div className="item-card glass">
+      <div className="item-card-body">
+
+      <div className='title'>{name}</div>
       <img src={img_url} alt={name} />
       <p>{description}</p>
-      <div className="item-card-body">
         <p>{category}</p>
         <p>{price}</p>
         <p>{url}</p>
@@ -33,8 +33,8 @@ function ItemCard(props) {
         <p>{bought}</p>
         <p>{currently_at}</p>
         <p>{notes}</p>
-        {/* <p>{user_id}</p>
-        <p>{project_id}</p> */}
+        {/* {/* <p>{user_id}</p> */}
+        <p>{project_id}</p> 
       </div>
     </div>
   );

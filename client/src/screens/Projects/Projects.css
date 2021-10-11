@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 .project-map {
-  border: 1px solid grey;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
