@@ -13,7 +13,6 @@ import ItemEdit from '../../screens/ItemEdit/ItemEdit';
 
 function ItemContainer() {
   const [items, setItems] = useState([]);
-  // const history = useHistory();
 
   useEffect(() => {
     const getItems = async () => {

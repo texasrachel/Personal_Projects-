@@ -29,9 +29,6 @@ function ProjectEdit(props) {
     // user_id,
     // item_id,
   } = project;
-  // const { updateProject } = props;
-  // console.log(props.projects);
-  // console.log(project);
 
   const [isUpdated, setUpdate] = useState(false);
 

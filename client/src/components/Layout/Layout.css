@@ -9,12 +9,12 @@
   grid-area: content;
   padding: 30px 10px 10px 10px;
   height: 100%;
+  background-color: #7D38FB;
 }
 .welcome {
   font-family: "Satisfy", cursive;
   font-size: 30px;
 }
-
 .layout-nav {
   padding: 10px;
   font-family: "Work Sans", sans-serif;
@@ -28,4 +28,10 @@
 }
 .layout-nav ul {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 800px) {
+  .nav {
+    float:none;
+  }
 }

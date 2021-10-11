@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import './ProjectCreate.css'
 
 function ProjectCreate(props) {
+  const history = useHistory();
 
   const [project, setProject] = useState({
     name: "",
@@ -32,6 +34,7 @@ function ProjectCreate(props) {
       ...prevState,
       [name]: value
     }))
+    // history.push("/projects");
   }
 
   return (

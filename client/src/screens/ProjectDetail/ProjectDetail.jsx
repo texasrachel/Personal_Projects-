@@ -35,7 +35,8 @@ function ProjectDetail(props) {
     const project = await addItemToProject(id, selectedItem);
     setProject(project);
     history.push("/projects/:id");
-    //{project.item display map}
+    // {project.item display map}  {projects.map((item_id) => {
+    // )}
   };
 
   return (

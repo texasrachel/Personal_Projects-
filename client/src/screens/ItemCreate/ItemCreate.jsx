@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useHistory } from 'react-router-dom'
 
 import "./ItemCreate.css";
 
 function ItemCreate(props) {
+  const history = useHistory();
+
   const [item, setItem] = useState({
     name: "",
     img_url: "",
@@ -39,6 +42,7 @@ function ItemCreate(props) {
       ...prevState,
       [name]: value,
     }));
+    // history.push("/items");
   };
   return (
     <div className="item-create-container ">
@@ -46,13 +50,18 @@ function ItemCreate(props) {
         onSubmit={(e) => {
           e.preventDefault();
           createItem(item);
+          history.push("/items");
         }}
       >
         <div className="page-title">Create New Item</div>
 
         <div className="item-text glass">
           <label>Name:</label>
-          <input type="text" name="name" value={name} onChange={handleChange} />
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange} />
 
           <label>Image Url:</label>
           <input
@@ -131,7 +140,7 @@ function ItemCreate(props) {
         </div>
 
         <br />
-        <button>Submit</button>
+        <button className='glass-button'>Submit</button>
       </form>
     </div>
   );
