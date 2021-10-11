@@ -4,7 +4,7 @@ import {
   getItem,
   deleteItem
 } from "../../services/items";
-import "./ItemDetail.css";
+// import "./ItemDetail.css";
 import Layout from "../../components/Layout/Layout";
 
 function ItemDetail(props) {

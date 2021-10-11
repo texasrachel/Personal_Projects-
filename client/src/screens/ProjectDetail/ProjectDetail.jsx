@@ -5,7 +5,7 @@ import {
   deleteProject,
   addItemToProject,
 } from "../../services/projects";
-import "./ProjectDetail.css";
+// import "./ProjectDetail.css";
 
 function ProjectDetail(props) {
   const [project, setProject] = useState(null);

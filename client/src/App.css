@@ -13,7 +13,7 @@
   grid-column-gap: 10px;
   min-height: 100vh;
   margin: 0;
-  /* background-image: linear-gradient(to top right, #7D38FB, #C02EC4, #6094EA); */
+  background-image: linear-gradient(to top right, #7D38FB, #C02EC4, #6094EA);
   font-family: 'Work Sans', sans-serif;
   font-size: 18px;
   color: white;
@@ -26,20 +26,14 @@ a:hover, a:visited, a:link, a:active {
 
 header, footer, content, nav {
   padding: 0.3em;
-  }
-
-/* Stack the layout on small devices/viewports. */
-@media all and (max-width: 575px) {
-  body { 
-    grid-template-areas: 
-      "header"
-      "content"
-      "nav"
-      "footer";
-    grid-template-rows: 80px 1fr 70px 1fr 70px;  
-    grid-template-columns: 1fr;
-  }
 }
+.title {
+  padding: 10px;
+  font-family: "Rancho", cursive;
+  font-size: 30px;
+  color: white;
+}
+
 .glass-button {
   display: inline-block;
   padding: 10px;
@@ -54,18 +48,11 @@ header, footer, content, nav {
   cursor: pointer;
   text-transform: uppercase;
 }
-
 .glass-button:hover {
   background-color: rgba(255,255,255,0.2);
 }
-.title {
-  padding: 10px;
-  font-family: "Rancho", cursive;
-  font-size: 30px;
-  color: white;
-}
+
 .glass {
-  /* From https://css.glass */
   background: rgba(171, 126, 255, 0.25);
   border-radius: 16px;
   box-shadow: 20px 24px 30px rgba(0, 0, 0, 0.2);
@@ -84,11 +71,11 @@ header, footer, content, nav {
   padding: 50px 0px 10px 0px;
   text-decoration: underline;
 }
-.text-link:hover, :visited, :link, :active {
-  padding: 50px 0px 10px 0px;
+.text-link:hover, :visited, :active {
   border-radius: 10px;
   color: white;
 }
+
 label{
   display: block;
   font-family: "Work Sans", sans-serif;
@@ -101,4 +88,17 @@ input[type="password"] {
   font-family: "Work Sans", sans-serif;
   font-size: 16px;
   border-radius: 10px;
+}
+
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  body { 
+    grid-template-areas: 
+      "header"
+      "content"
+      "nav"
+      "footer";
+    grid-template-rows: 80px 1fr 70px 1fr 70px;  
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,10 +1,13 @@
-import './Footer.css'
+// import './Footer.css'
+
 const Footer = () => {
   return (
     <footer>
       <div className='footer'> 
-      <a className='git-icons' href="https://github.com/texasrachel" target="blank"> <img className="github-img" src="https://github.com/tiffanybibby/encapsule/blob/main/assets/github-logo.png?raw=true" alt='github icon' /> </a>
-      <a className='name' href="https://www.linkedin.com/in/texasrachel" target="blank">Rachel Ginnett</a>
+        <a className='git-icon' href="https://github.com/texasrachel" target="blank">
+          <img className="github-img" src="https://res.cloudinary.com/texasrachel/image/upload/v1633951543/psp/github-logo_dnam4t.png" alt='github icon' />
+        </a>
+      <a className='footer-name' href="https://www.linkedin.com/in/texasrachel" target="blank">Rachel Ginnett</a>
       </div>
     </footer>
   )

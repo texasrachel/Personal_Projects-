@@ -1,6 +1,6 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import "./Layout.css";
+// import "./Layout.css";
 
 const Layout = (props) => {
   return (
@@ -8,8 +8,11 @@ const Layout = (props) => {
       <div className="nav">
         {props.currentUser ? (
           <div className="welcome">
-            <p>Welcome {props.currentUser.username}</p>
-            <button onClick={props.handleLogout}>Logout</button>
+            <NavLink to="/">
+            <p>Welcome {props.currentUser.username}</p></NavLink>
+            <button
+              className='glass-button'
+              onClick={props.handleLogout}>Logout</button>
           </div>
         ) : (
           <div className="layout-nav">
@@ -28,7 +31,7 @@ const Layout = (props) => {
         {props.currentUser && (
           <div className="pages">
             <p>
-              <Link to="/projects">Projects</Link>
+              <NavLink to="/projects">Projects</NavLink>
             </p>
             <p>
               <NavLink to="/items">Items</NavLink>

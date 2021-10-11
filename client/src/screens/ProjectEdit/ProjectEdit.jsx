@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { updateProject } from "../../services/projects";
-import "./ProjectEdit.css";
+// import "./ProjectEdit.css";
 
 function ProjectEdit(props) {
   const [project, setProject] = useState({

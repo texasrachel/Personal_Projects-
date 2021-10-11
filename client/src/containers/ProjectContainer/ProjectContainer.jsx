@@ -18,12 +18,11 @@ import ProjectEdit from '../../screens/ProjectEdit/ProjectEdit';
 function ProjectContainer() {
   const [projects, setProjects] = useState([]);
   const [items, setItems] = useState([])
-  // const history = useHistory();
+
 
   useEffect(() => {
     const getProjects = async () => {
       const projectList = await getAllProjects();
-      // console.log(projectList);
       setProjects(projectList);
     };
     getProjects();

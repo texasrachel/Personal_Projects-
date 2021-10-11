@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Projects.css";
+// import "./Projects.css";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 
 function Projects(props) {
